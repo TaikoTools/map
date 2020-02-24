@@ -7,11 +7,21 @@ import ../viewModel/mapViewModel
 import ../model/mapModel
 import ./infoView
 
-const svg="""<svg width="100%" height="100%">
+const svgOkedo="""<svg width="100%" height="100%">
   <ellipse stroke="black" stroke-width="1" fill="#c0c0c0" cx="50%" rx="50%" ry="10%" cy="90%"></ellipse>
   <rect x="0" stroke="black" stroke-width="1" fill="#c0c0c0" width="100%" height="80%" y="10%"></rect>
   <ellipse stroke-width="0" fill="#c0c0c0" cx="50%" rx="50%" ry="10%" cy="90%"></ellipse>
   <ellipse stroke="black" stroke-width="1" fill="#c0c0c0" cx="50%" rx="50%" ry="10%" cy="10%"></ellipse> 
+Sorry, your browser does not support inline SVG.
+</svg>"""
+const svgNagado="""<svg width="100%" height="100%">
+  <ellipse stroke="black" stroke-width="1" fill="#c0c0c0" cx="50%" rx="45%" ry="10%" cy="90%"></ellipse>
+  <ellipse stroke="black" stroke-width="1" fill="#c0c0c0" cx="5%" rx="5%" ry="40%" cy="50%"></ellipse>
+    <ellipse stroke="black" stroke-width="1" fill="#c0c0c0" cx="95%" rx="5%" ry="40%" cy="50%"></ellipse>
+  <ellipse stroke="black" stroke-width="1" fill="#c0c0c0" cx="50%" rx="45%" ry="10%" cy="90%"></ellipse>
+  <rect x="5%" stroke="black" stroke-width="0" fill="#c0c0c0" width="90%" height="80%" y="10%"></rect>
+  <ellipse stroke-width="0" fill="#c0c0c0" cx="50%" rx="45%" ry="10%" cy="90%"></ellipse>
+  <ellipse stroke="black" stroke-width="1" fill="#c0c0c0" cx="50%" rx="45%" ry="10%" cy="10%"></ellipse> 
 Sorry, your browser does not support inline SVG.
 </svg>"""
 
@@ -34,15 +44,24 @@ proc updateInstrument(instrument: InstrumentElement, x, y, height, width, angle:
     instrument.data.width = width
     instrument.data.angle = angle
 
-proc addInstrument*(x, y, width, height, angle: int) =
+proc addInstrument*(x, y, height, width, angle: int, instrumentType: InstrumentType) =
     var instrument = createInstrument()
     let map = document.getElementById("map")
     let element = document.createElement("div")
+    let svg = case instrumentType:
+        of Okedo:
+            svgOkedo
+        of Shime:
+            svgOkedo
+        of Nagado:
+            svgNagado
+        of Oodaiko:
+            svgNagado
     element.innerHTML = svg
     element.style.position = "absolute"
     map.appendChild(element)
     let instrumentElement = InstrumentElement(e: element, data: instrument)
-    instrumentElement.updateInstrument(x, y, width, height, angle)
+    instrumentElement.updateInstrument(x, y, height, width, angle)
     instruments.add(instrumentElement)
     element.addEventListener("mousedown", proc (ev: Event) =
         if selected != nil:
