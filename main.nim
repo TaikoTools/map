@@ -1,6 +1,6 @@
 include karax / prelude
 import src/view/mapView
-import src/view/infoView
+import src/view/sideMenuView
 import sugar
 
 proc createDom(): VNode =
@@ -15,7 +15,16 @@ proc createDom(): VNode =
                 input(`type` = "number", id = "width", value = "0")
             button(onclick = () => initMap()):
                 text("Novo mapa")
-            button(onclick = () => addInstrument(0, 0, 40, 30, 0)):
+            tdiv(id = "instrumentType", class = "list"):
+                tdiv(onclick = () => selectInstrumentType("Okedo")):
+                    text("Okedo")
+                tdiv(onclick = () => selectInstrumentType("Shime")):
+                    text("Shime")
+                tdiv(onclick = () => selectInstrumentType("Nagado")):
+                    text("Nagado")
+                tdiv(onclick = () => selectInstrumentType("Oodaiko")):
+                    text("Oodaiko")
+            button(onclick = () => addNewInstrument()):
                 text("Novo taiko")
         tdiv(id = "map")
         tdiv(id = "instrumentInfo"):

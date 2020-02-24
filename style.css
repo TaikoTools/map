@@ -80,6 +80,21 @@ label {
     display: none;
 }
 
-.selected {
+#map .selected {
     border: black 1px dotted;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    margin: 8px;
+}
+
+.list div {
+    background-color: azure;
+    padding: 4px;
+}
+
+.list div.selected {
+    background-color: brown;
 }

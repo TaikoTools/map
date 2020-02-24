@@ -1,7 +1,7 @@
 import json
 
 type
-    InstrumentType = enum 
+    InstrumentType* = enum 
         Okedo,
         Nagado,
         Shime,
