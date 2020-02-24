@@ -1,0 +1,85 @@
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+}
+
+button {
+    margin: 8px;
+    padding: 4px;
+    border: 0;
+    border-radius: 8px;
+}
+
+input[type="number"] {
+    margin: 8px;
+    width: 76px;
+}
+
+label {
+    position: absolute;
+    font-size: 12px;
+}
+
+#ROOT {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 220px auto 220px;
+}
+
+#sideMenu {
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: aqua;
+}
+
+#instrumentInfo {
+    grid-column: 3;
+    display: flex;
+    flex-direction: column;
+    background-color: aqua;
+}
+
+#map {
+    margin: auto;
+    background: linear-gradient(
+        0deg,
+        #000,
+        #000 1px,
+        #fff0 1px,
+        #fff0 66px,
+        #000 66px,
+        #000 66px,
+        #fff0 67px,
+        #fff0 131px,
+        #000 131px,
+        #000 132px
+    ), 
+    linear-gradient(
+        90deg,
+        #000,
+        #000 1px,
+        #fff0 1px,
+        #fff0 66px,
+        #000 66px,
+        #000 66px,
+        #fff0 67px,
+        #fff0 131px,
+        #000 131px,
+        #000 132px
+    );
+    background-size: 132px 132px;
+    border: 1px solid black;
+    position: relative;
+    background-attachment: local;
+    overflow: auto;
+    display: none;
+}
+
+.selected {
+    border: black 1px dotted;
+}
