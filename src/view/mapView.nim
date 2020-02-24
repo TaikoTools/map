@@ -1,6 +1,5 @@
 import dom
 import strutils
-import sequtils
 import ../helper/dragable
 import ../helper/seq
 import ../helper/constants
