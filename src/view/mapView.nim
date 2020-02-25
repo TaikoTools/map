@@ -1,8 +1,10 @@
 import dom
 import strutils
+import json
 import ../helper/dragable
 import ../helper/seq
 import ../helper/constants
+import ../helper/fileReader
 import ../viewModel/mapViewModel
 import ../model/mapModel
 import ./infoView
@@ -32,23 +34,25 @@ type InstrumentElement = ref object of RootObj
 var instruments: seq[InstrumentElement] = newSeq[InstrumentElement]()
 var selected*: InstrumentElement
 
+proc updateInstrument(element: InstrumentElement, instrument: Instrument) =
+    element.e.style.height = $instrument.height & "px"
+    element.e.style.width = $instrument.width & "px"
+    element.e.style.left = $(int((mapViewModel.map.width - instrument.width) / 2) + instrument.x) & "px"
+    element.e.style.top = $(int((mapViewModel.map.height - instrument.height) / 2) + instrument.y) & "px"
+    element.e.style.transform = "rotate(" & $instrument.angle & "deg)"
+
 proc updateInstrument(instrument: InstrumentElement, x, y, height, width, angle: int) =
-    instrument.e.style.height = $height & "px"
-    instrument.e.style.width = $width & "px"
-    instrument.e.style.left = $(int((mapViewModel.map.width - width) / 2) + x) & "px"
-    instrument.e.style.top = $(int((mapViewModel.map.height - height) / 2) + y) & "px"
-    instrument.e.style.transform = "rotate(" & $angle & "deg)"
     instrument.data.x = x
     instrument.data.y = y
     instrument.data.height = height
     instrument.data.width = width
     instrument.data.angle = angle
+    instrument.updateInstrument(instrument.data)
 
-proc addInstrument*(x, y, height, width, angle: int, instrumentType: InstrumentType) =
-    var instrument = createInstrument()
+proc addInstrumentElement(instrument: Instrument) =
     let map = document.getElementById("map")
     let element = document.createElement("div")
-    let svg = case instrumentType:
+    let svg = case instrument.instrumentType:
         of Okedo:
             svgOkedo
         of Shime:
@@ -61,7 +65,7 @@ proc addInstrument*(x, y, height, width, angle: int, instrumentType: InstrumentT
     element.style.position = "absolute"
     map.appendChild(element)
     let instrumentElement = InstrumentElement(e: element, data: instrument)
-    instrumentElement.updateInstrument(x, y, height, width, angle)
+    instrumentElement.updateInstrument(instrument)
     instruments.add(instrumentElement)
     element.addEventListener("mousedown", proc (ev: Event) =
         if selected != nil:
@@ -80,7 +84,13 @@ proc addInstrument*(x, y, height, width, angle: int, instrumentType: InstrumentT
         updateInfo(selected.data)
     )
 
+
+proc addInstrument*(x, y, height, width, angle: int, instrumentType: InstrumentType) =
+    var instrument = createInstrument(x, y, height, width, angle, instrumentType)
+    addInstrumentElement(instrument)
+
 proc deleteSelected*() =
+    mapViewModel.instruments.delete(selected.data)
     selected.e.parentNode.removeChild(selected.e)
     instruments.delete(selected)
 
@@ -90,17 +100,42 @@ proc clear() =
         instrument.e.parentNode.removeChild(instrument.e)
     instruments.deleteAll()
 
-proc initMap*() =
-    let height = parseInt($document.getElementById("height").value) * meter
-    let width = parseInt($document.getElementById("width").value) * meter
+proc updateMapElement() =
     let map = document.getElementById("map")
-    initInfo()
-    clear()
-    mapViewModel.initMap(height, width)
+    let height = mapViewModel.map.height
+    let width = mapViewModel.map.width
     map.style.height = $height & "px"
     map.style.width = $width & "px"
     map.style.backgroundPosition = $(height / 2) & "px " & $(width / 2) & "px"
     map.style.display = "block"
+    document.getElementById("newMap").classList.remove("down")
+
+proc initMap*() =
+    let height = parseInt($document.getElementById("height").value) * meter
+    let width = parseInt($document.getElementById("width").value) * meter
+    initInfo()
+    clear()
+    mapViewModel.initMap(height, width)
+    updateMapElement()
 
 infoView.updateSelected = proc(x, y, height, width, angle: int) =
     selected.updateInstrument(x, y, height, width, angle)
+
+proc loadMap*() =
+    var reader = FileReader()
+    var file = InputElement(document.getElementById("load")).files[0]
+    reader.onload = proc (e: FLoad) =
+        let json = parseJson($reader.result)
+        loadJson(json)
+        updateMapElement()
+        for instrument in mapViewModel.instruments:
+            addInstrumentElement(instrument)
+    
+    reader.readAsText(file)
+
+proc saveMap*() =
+    var a = document.getElementById("download")
+    a.setAttr("download", "mapa.taiko")
+    a.setAttr("href", "data:text/json;charset=utf-8," & dataJson())
+    a.click()
+    return

@@ -7,11 +7,17 @@ body {
     margin: 0;
 }
 
-button {
+.btn {
     margin: 8px;
     padding: 4px;
     border: 0;
     border-radius: 8px;
+    background-color: aliceblue;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: red;
 }
 
 input[type="number"] {
@@ -19,7 +25,7 @@ input[type="number"] {
     width: 76px;
 }
 
-label {
+label.floatLabel {
     position: absolute;
     font-size: 12px;
 }
@@ -97,4 +103,22 @@ label {
 
 .list div.selected {
     background-color: brown;
+}
+
+.dropdown {
+    max-height: 0px;
+    transition: max-height 0.2s;
+    background-color: azure;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown.down {
+    max-height: 100px;
+}
+
+.hidden {
+    display: none;
 }

@@ -4,6 +4,12 @@ import ../view/mapView
 import ../helper/constants
 import ../model/mapModel
 
+proc showNewMapMenu*() =
+    if document.getElementById("newMap").classList.contains("down"):
+        document.getElementById("newMap").classList.remove("down")
+    else:
+        document.getElementById("newMap").classList.add("down")
+
 var selectedType : InstrumentType
 
 proc selectInstrumentType*(instrumentType: string) =
