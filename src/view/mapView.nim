@@ -126,6 +126,8 @@ proc loadMap*() =
     var file = InputElement(document.getElementById("load")).files[0]
     reader.onload = proc (e: FLoad) =
         let json = parseJson($reader.result)
+        initInfo()
+        clear()
         loadJson(json)
         updateMapElement()
         for instrument in mapViewModel.instruments:
@@ -138,4 +140,3 @@ proc saveMap*() =
     a.setAttr("download", "mapa.taiko")
     a.setAttr("href", "data:text/json;charset=utf-8," & dataJson())
     a.click()
-    return
