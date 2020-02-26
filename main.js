@@ -5344,11 +5344,15 @@ function load_map_258795() {
 				F.line = 128;
 				var json_258802 = parse_json_234457(cstrToNimstr(reader_258797.result));
 				F.line = 129;
-				load_json_255507(json_258802);
+				init_info_256139();
 				F.line = 130;
+				clear_258428();
+				F.line = 131;
+				load_json_255507(json_258802);
+				F.line = 132;
 				update_map_element_258709();
 				L1: do {
-					F.line = 131;
+					F.line = 133;
 					var instrument_259014 = null;
 					F.line = 184;
 					var i_262683 = 0;
@@ -5358,9 +5362,9 @@ function load_map_258795() {
 						F.line = 186;
 							L3: while (true) {
 							if (!(i_262683 < l_262684)) break L3;
-								F.line = 131;
+								F.line = 133;
 								instrument_259014 = instruments_255067[0][chckIndx(i_262683, 0, (instruments_255067[0] != null ? instruments_255067[0].length : 0)+0-1)-0];
-								F.line = 132;
+								F.line = 134;
 								add_instrument_element_257147(instrument_259014);
 								F.line = 188;
 								i_262683 = addInt(i_262683, 1);
@@ -5385,7 +5389,7 @@ function load_map_258795() {
 		var file_258798 = (Tmp1 = document.getElementById("load").files, Tmp1)[chckIndx(0, 0, (Tmp1 != null ? Tmp1.length : 0)+0-1)-0];
 		F.line = 127;
 		reader_258797.onload = HEX3Aanonymous_258799;
-		F.line = 134;
+		F.line = 136;
 		reader_258797.readAsText(file_258798);
 	framePtr = F.prev;
 
@@ -5991,18 +5995,14 @@ function data_json_255258() {
 function save_map_259087() {
 	var F={procname:"mapView.saveMap",prev:framePtr,filename:"mapView.nim",line:0};
 	framePtr = F;
-	BeforeRet: do {
-		F.line = 137;
-		var a_259089 = document.getElementById("download");
-		F.line = 138;
-		a_259089.setAttribute("download", "mapa.taiko");
 		F.line = 139;
-		a_259089.setAttribute("href", toJSStr((makeNimstrLit("data:text/json;charset=utf-8,") || []).concat(data_json_255258() || [])));
+		var a_259089 = document.getElementById("download");
 		F.line = 140;
-		a_259089.click();
+		a_259089.setAttribute("download", "mapa.taiko");
 		F.line = 141;
-		break BeforeRet;
-	} while (false);
+		a_259089.setAttribute("href", toJSStr((makeNimstrLit("data:text/json;charset=utf-8,") || []).concat(data_json_255258() || [])));
+		F.line = 142;
+		a_259089.click();
 	framePtr = F.prev;
 
 	
