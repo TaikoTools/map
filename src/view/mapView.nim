@@ -27,29 +27,7 @@ const svgNagado="""<svg width="100%" height="100%">
 Sorry, your browser does not support inline SVG.
 </svg>"""
 
-type InstrumentElement = ref object of RootObj
-    e: Element
-    data: Instrument
-
-var instruments: seq[InstrumentElement] = newSeq[InstrumentElement]()
-var selected*: InstrumentElement
-
-proc updateInstrument(element: InstrumentElement, instrument: Instrument) =
-    element.e.style.height = $instrument.height & "px"
-    element.e.style.width = $instrument.width & "px"
-    element.e.style.left = $(int((mapViewModel.map.width - instrument.width) / 2) + instrument.x) & "px"
-    element.e.style.top = $(int((mapViewModel.map.height - instrument.height) / 2) + instrument.y) & "px"
-    element.e.style.transform = "rotate(" & $instrument.angle & "deg)"
-
-proc updateInstrument(instrument: InstrumentElement, x, y, height, width, angle: int) =
-    instrument.data.x = x
-    instrument.data.y = y
-    instrument.data.height = height
-    instrument.data.width = width
-    instrument.data.angle = angle
-    instrument.updateInstrument(instrument.data)
-
-proc addInstrumentElement(instrument: Instrument) =
+proc addInstrument(instrument: Instrument) =
     let map = document.getElementById("map")
     let element = document.createElement("div")
     let svg = case instrument.instrumentType:
@@ -87,15 +65,13 @@ proc addInstrumentElement(instrument: Instrument) =
 
 proc addInstrument*(x, y, height, width, angle: int, instrumentType: InstrumentType) =
     var instrument = createInstrument(x, y, height, width, angle, instrumentType)
-    addInstrumentElement(instrument)
+    addInstrument(instrument)
 
 proc deleteSelected*() =
-    mapViewModel.instruments.delete(selected.data)
     selected.e.parentNode.removeChild(selected.e)
     instruments.delete(selected)
 
 proc clear() =
-    mapViewModel.clear()
     for instrument in instruments:
         instrument.e.parentNode.removeChild(instrument.e)
     instruments.deleteAll()
@@ -118,20 +94,17 @@ proc initMap*() =
     mapViewModel.initMap(height, width)
     updateMapElement()
 
-infoView.updateSelected = proc(x, y, height, width, angle: int) =
-    selected.updateInstrument(x, y, height, width, angle)
-
 proc loadMap*() =
     var reader = FileReader()
     var file = InputElement(document.getElementById("load")).files[0]
     reader.onload = proc (e: FLoad) =
         let json = parseJson($reader.result)
+        let data = loadJson(json)
         initInfo()
         clear()
-        loadJson(json)
         updateMapElement()
-        for instrument in mapViewModel.instruments:
-            addInstrumentElement(instrument)
+        for instrument in data:
+            addInstrument(instrument)
     
     reader.readAsText(file)
 

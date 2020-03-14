@@ -1,8 +1,10 @@
 import dom
 import strutils
 import ../model/mapModel
+import ../viewModel/mapViewModel
 
-var updateSelected* : proc(x, y, height, width, angle: int)
+proc updateSelected*(x, y, height, width, angle: int) = 
+    selected.updateInstrument(x, y, height, width, angle)
 
 proc listener() = 
     let x = parseInt($document.getElementById("x").value)
