@@ -56,6 +56,7 @@ label.floatLabel {
 
 #map {
     margin: auto;
+    margin-right: 0;
     background: linear-gradient(
         0deg,
         #000,
@@ -139,4 +140,20 @@ label.floatLabel {
 
 .hidden {
     display: none;
+}
+
+#instrumentList {
+    margin:auto
+}
+
+.flex {
+    display: flex;
+}
+
+table {
+    border-collapse: collapse;
+}
+  
+table, tr {
+    border: 1px solid black;
 }

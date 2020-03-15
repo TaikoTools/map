@@ -56,7 +56,9 @@ proc createDom(): VNode =
                 tdiv(id = "city")
                 tdiv(id = "team")
                 tdiv(id = "music")
-            tdiv(id = "map")
+            tdiv(class = "flex"):
+                tdiv(id = "map")
+                table(id = "instrumentList")
         tdiv(id = "instrumentInfo"):
             tdiv():
                 label(`for` = "sequenceInput", class = "floatLabel"):
@@ -96,6 +98,5 @@ proc createDom(): VNode =
             tdiv(class = "btn", onclick = deleteSelected):
                 text("Delete")
 
-            table(id = "instrumentList")
 
 setRenderer createDom

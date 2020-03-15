@@ -9,6 +9,7 @@ import ../viewModel/mapViewModel
 import ../model/mapModel
 import ./infoView
 import ./headerView
+import ./instrumentListView
 
 const svgOkedo="""<svg width="100%" height="100%">
   <ellipse stroke="black" stroke-width="1" fill="#c0c0c0" cx="50%" rx="50%" ry="10%" cy="90%"></ellipse>
@@ -78,6 +79,7 @@ proc clear() =
     for instrument in instruments:
         instrument.e.parentNode.removeChild(instrument.e)
     instruments.deleteAll()
+    updateList()
 
 proc removeSelection(e: Event) = 
     if e.target.id == "map" and selected != nil:
