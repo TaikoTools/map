@@ -27,6 +27,7 @@ proc initMap*(height, width = 0) =
 
 proc dataJson*(): string =
     let data = instruments.mapIt(it.data)
+    result = toJson(map, data)
 
 proc loadJson*(json: string): seq[Instrument] =
     let data = fromJson(json)

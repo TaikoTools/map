@@ -110,7 +110,7 @@ proc loadMap*() =
     reader.readAsText(file)
 
 proc saveMap*() =
-    var a = document.getElementById("download")
-    a.setAttr("download", "mapa.taiko")
-    a.setAttr("href", "data:text/json;charset=utf-8," & dataJson())
-    a.click()
+    var link = document.createElement("a")
+    link.setAttr("download", "mapa.taiko")
+    link.setAttr("href", "data:text/json;charset=utf-8," & dataJson())
+    link.click()

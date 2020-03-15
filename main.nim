@@ -23,7 +23,6 @@ proc createDom(): VNode =
             input(`type` = "file" , onchange = () => loadMap(), id = "load", class = "hidden", accept = ".taiko", download = "a.taiko")
             tdiv(class = "btn", onclick = () => saveMap()):
                 text("Salvar")
-            a(id = "download", class = "hidden")
             tdiv(id = "instrumentType", class = "list"):
                 tdiv(onclick = () => selectInstrumentType("Okedo")):
                     text("Okedo")
