@@ -1,7 +1,4 @@
-import json
-import strutils
 import sequtils
-import sugar
 import dom
 import ../helper/seq
 import ../model/mapModel
@@ -30,29 +27,11 @@ proc initMap*(height, width = 0) =
 
 proc dataJson*(): string =
     let data = instruments.mapIt(it.data)
-    result = $ %* {"map": map, "instruments": data}
 
-proc loadJson*(json: JsonNode): seq[Instrument] =
-    result = newSeq[Instrument]()
-    map.height = json["map"]["height"].getInt()
-    map.width = json["map"]["width"].getInt()
-    for instrumentJson in json["instruments"]:
-        let
-            x = instrumentJson["x"].getInt()
-            y = instrumentJson["y"].getInt()
-            height = instrumentJson["height"].getInt()
-            width = instrumentJson["width"].getInt()
-            angle = instrumentJson["angle"].getInt()
-            instrumentType = parseEnum[InstrumentType](instrumentJson["instrumentType"].getStr())
-            instrument = Instrument(
-                x: x,
-                y: y,
-                height: height,
-                width: width,
-                angle: angle,
-                instrumentType: instrumentType
-            )
-        result.add(instrument)
+proc loadJson*(json: string): seq[Instrument] =
+    let data = fromJson(json)
+    map = data.map
+    result = data.instruments
 
 proc updateInstrument*(element: InstrumentElement, instrument: Instrument) =
     element.e.style.height = $instrument.height & "px"

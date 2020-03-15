@@ -61,6 +61,7 @@ proc addInstrument(instrument: Instrument) =
         instrument.y = top - int((mapViewModel.map.height - height) / 2)
         updateInfo(selected.data)
     )
+    updateList()
 
 
 proc addInstrument*(x, y, height, width, angle: int, instrumentType: InstrumentType) =
@@ -70,6 +71,7 @@ proc addInstrument*(x, y, height, width, angle: int, instrumentType: InstrumentT
 proc deleteSelected*() =
     selected.e.parentNode.removeChild(selected.e)
     instruments.delete(selected)
+    updateList()
 
 proc clear() =
     for instrument in instruments:
@@ -98,8 +100,7 @@ proc loadMap*() =
     var reader = FileReader()
     var file = InputElement(document.getElementById("load")).files[0]
     reader.onload = proc (e: FLoad) =
-        let json = parseJson($reader.result)
-        let data = loadJson(json)
+        let data = loadJson($reader.result)
         initInfo()
         clear()
         updateMapElement()

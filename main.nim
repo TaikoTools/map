@@ -59,4 +59,6 @@ proc createDom(): VNode =
             tdiv(class = "btn", onclick = deleteSelected):
                 text("Delete")
 
+            table(id = "instrumentList")
+
 setRenderer createDom
