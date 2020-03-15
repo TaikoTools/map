@@ -20,6 +20,10 @@ type
 
     Map* = ref MapObj
     MapObj* = object of RootObj
+        sequence*: string
+        city*: string
+        team*: string
+        music*: string
         height*: int
         width*: int
 
@@ -36,6 +40,10 @@ func fromJson*(json: string): SaveData =
     var instruments = newSeq[Instrument]()
     map.height = jsonObj["map"]["height"].getInt()
     map.width = jsonObj["map"]["width"].getInt()
+    map.sequence = jsonObj["map"]["sequence"].getStr()
+    map.team = jsonObj["map"]["team"].getStr()
+    map.city = jsonObj["map"]["city"].getStr()
+    map.music = jsonObj["map"]["music"].getStr()
     for instrumentJson in jsonObj["instruments"]:
         let
             x = instrumentJson["x"].getInt()

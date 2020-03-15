@@ -8,6 +8,7 @@ import ../helper/fileReader
 import ../viewModel/mapViewModel
 import ../model/mapModel
 import ./infoView
+import ./headerView
 
 const svgOkedo="""<svg width="100%" height="100%">
   <ellipse stroke="black" stroke-width="1" fill="#c0c0c0" cx="50%" rx="50%" ry="10%" cy="90%"></ellipse>
@@ -50,7 +51,7 @@ proc addInstrument(instrument: Instrument) =
             selected.e.classList.remove("selected")
         selected = instrumentElement
         selected.e.classList.add("selected")
-        updateInfo(selected.data)
+        updateInfoInstrument(selected.data)
     )
     makeDragable(element, proc (e: Element) =
         let left = parseInt(($element.style.left).replace("px",""))
@@ -59,7 +60,7 @@ proc addInstrument(instrument: Instrument) =
         let height = parseInt(($element.offsetHeight).replace("px", ""))
         instrument.x = left - int((mapViewModel.map.width - width) / 2)
         instrument.y = top - int((mapViewModel.map.height - height) / 2)
-        updateInfo(selected.data)
+        updateInfoInstrument(selected.data)
     )
     updateList()
 
@@ -89,11 +90,17 @@ proc updateMapElement() =
     document.getElementById("newMap").classList.remove("down")
 
 proc initMap*() =
-    let height = parseInt($document.getElementById("height").value) * meter
-    let width = parseInt($document.getElementById("width").value) * meter
+    let height = parseInt($document.getElementById("heightNew").value) * meter
+    let width = parseInt($document.getElementById("widthNew").value) * meter
+    let sequence = $document.getElementById("sequenceNew").value
+    let city = $document.getElementById("cityNew").value
+    let team = $document.getElementById("teamNew").value
+    let music = $document.getElementById("musicNew").value
     initInfo()
     clear()
-    mapViewModel.initMap(height, width)
+    mapViewModel.initMap(height, width, sequence, city, team, music)
+    updateHeader(map)
+    updateInfoMap(map)
     updateMapElement()
 
 proc loadMap*() =
@@ -101,10 +108,14 @@ proc loadMap*() =
     var file = InputElement(document.getElementById("load")).files[0]
     reader.onload = proc (e: FLoad) =
         let data = loadJson($reader.result)
+        map = data.map
         initInfo()
         clear()
         updateMapElement()
-        for instrument in data:
+        updateHeader(map)
+        updateInfoMap(map)
+        echo $map.sequence
+        for instrument in data.instruments:
             addInstrument(instrument)
     
     reader.readAsText(file)

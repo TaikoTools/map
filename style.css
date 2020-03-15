@@ -25,6 +25,10 @@ input[type="number"] {
     width: 76px;
 }
 
+input {
+    margin: 8px;
+}
+
 label.floatLabel {
     position: absolute;
     font-size: 12px;
@@ -90,6 +94,19 @@ label.floatLabel {
     border: black 1px dotted;
 }
 
+#header {
+    display: grid;
+    grid-template-columns: 40px 1fr 2fr 2fr;
+    height: 40px;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+#header div {
+    border: 1px solid black;
+}
+
 .list {
     display: flex;
     flex-direction: column;
@@ -116,7 +133,7 @@ label.floatLabel {
 }
 
 .dropdown.down {
-    max-height: 100px;
+    max-height: 300px;
 }
 
 .hidden {

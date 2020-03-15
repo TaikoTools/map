@@ -22,17 +22,16 @@ proc createInstrument*(x, y, height, width, angle: int, instrumentType: Instrume
         )
     result = instrument
 
-proc initMap*(height, width = 0) =
-    map = Map(height: height, width: width)
+proc initMap*(height, width = 0, sequence, city, team, music: string) =
+    map = Map(height: height, width: width, sequence: sequence, city: city, team: team, music: music)
 
 proc dataJson*(): string =
     let data = instruments.mapIt(it.data)
     result = toJson(map, data)
 
-proc loadJson*(json: string): seq[Instrument] =
+proc loadJson*(json: string): SaveData =
     let data = fromJson(json)
-    map = data.map
-    result = data.instruments
+    result = data
 
 proc updateInstrument*(element: InstrumentElement, instrument: Instrument) =
     element.e.style.height = $instrument.height & "px"

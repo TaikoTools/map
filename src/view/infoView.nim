@@ -4,41 +4,54 @@ import strformat
 import tables
 import ../model/mapModel
 import ../viewModel/mapViewModel
+import ./headerView
 
 proc updateSelected*(x, y, height, width, angle: int) = 
-    selected.updateInstrument(x, y, height, width, angle)
+    if selected != nil:
+        selected.updateInstrument(x, y, height, width, angle)
 
-proc listener() = 
+proc listener(_: Event) = 
     let x = parseInt($document.getElementById("x").value)
     let y = parseInt($document.getElementById("y").value)
     let height = parseInt($document.getElementById("heightInfo").value)
     let width = parseInt($document.getElementById("widthInfo").value)
     let angle = parseInt($document.getElementById("angleInfo").value)
+    let sequence = $document.getElementById("sequenceInput").value
+    let city = $document.getElementById("cityInput").value
+    let team = $document.getElementById("teamInput").value
+    let music = $document.getElementById("musicInput").value
     updateSelected(x, y, height, width, angle)
+    updateHeader(sequence, city, team, music)
 
-proc updateInfo*(instrument: Instrument) =
+proc updateInfoInstrument*(instrument: Instrument) =
     document.getElementById("x").value = $instrument.x
     document.getElementById("y").value = $instrument.y
     document.getElementById("heightInfo").value = $instrument.height
     document.getElementById("widthInfo").value = $instrument.width
     document.getElementById("angleInfo").value = $instrument.angle
 
+proc updateInfoMap*(map: Map) =
+    document.getElementById("sequenceInput").value = $map.sequence
+    document.getElementById("cityInput").value = $map.city
+    document.getElementById("teamInput").value = $map.team
+    document.getElementById("musicInput").value = $map.music
+
+
 proc initInfo*() =
-    document.getElementById("x").addEventListener("input", proc (ev: Event) =
-        listener()
-    )
-    document.getElementById("y").addEventListener("input", proc (ev: Event) =
-        listener()
-    )
-    document.getElementById("heightInfo").addEventListener("input", proc (ev: Event) =
-        listener()
-    )
-    document.getElementById("widthInfo").addEventListener("input", proc (ev: Event) =
-        listener()
-    )
-    document.getElementById("angleInfo").addEventListener("input", proc (ev: Event) =
-        listener()
-    )
+    let elementIds = @[
+        "x",
+        "y",
+        "heightInfo",
+        "widthInfo",
+        "angleInfo",
+        "sequenceInput",
+        "cityInput",
+        "teamInput",
+        "musicInput"
+    ]
+    for id in elementIds:
+        document.getElementById(id).removeEventListener("input", listener)
+        document.getElementById(id).addEventListener("input", listener)
 
 proc updateList*() =
     var counter = initTable[string, int]()
@@ -51,4 +64,3 @@ proc updateList*() =
     list.innerHTML = ""
     for instrument, count in counter.pairs:
         list.innerHTML = $list.innerHTML & fmt"<tr><td>{instrument}</td><td>{count}</td></tr>"
-    echo counter
