@@ -79,6 +79,12 @@ proc clear() =
         instrument.e.parentNode.removeChild(instrument.e)
     instruments.deleteAll()
 
+proc removeSelection(e: Event) = 
+    if e.target.id == "map" and selected != nil:
+        updateInfoInstrument(Instrument())
+        selected.e.classList.remove("selected")
+        selected = nil
+
 proc updateMapElement() =
     let map = document.getElementById("map")
     let height = mapViewModel.map.height
@@ -88,6 +94,7 @@ proc updateMapElement() =
     map.style.backgroundPosition = $(height / 2) & "px " & $(width / 2) & "px"
     map.style.display = "block"
     document.getElementById("newMap").classList.remove("down")
+    document.getElementById("map").addEventListener("mousedown", removeSelection)
 
 proc initMap*() =
     let height = parseInt($document.getElementById("heightNew").value) * meter

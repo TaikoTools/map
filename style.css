@@ -92,6 +92,7 @@ label.floatLabel {
 
 #map .selected {
     border: black 1px dotted;
+    margin: -1px;
 }
 
 #header {
