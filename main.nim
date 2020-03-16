@@ -62,7 +62,7 @@ proc createDom(): VNode =
         tdiv(id = "instrumentInfo"):
             tdiv():
                 label(`for` = "sequenceInput", class = "floatLabel"):
-                    text("Ordem da apredentação")
+                    text("Ordem da apresentação")
                 input(id = "sequenceInput")
             tdiv():
                 label(`for` = "cityInput", class = "floatLabel"):
