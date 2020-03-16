@@ -5745,7 +5745,7 @@ function create_dom_272014() {
 		var tmp_272106 = tree_172046(104, []);
 		set_attr_170568(tmp_272106, "for", "sequenceInput");
 		tmp_272106.class = "floatLabel";
-		add_170786(tmp_272106, text_172164(makeNimstrLit("Ordem da apredenta\xC3\xA7\xC3\xA3o")));
+		add_170786(tmp_272106, text_172164(makeNimstrLit("Ordem da apresenta\xC3\xA7\xC3\xA3o")));
 		add_170786(tmp_272105, tmp_272106);
 		var tmp_272107 = tree_172046(105, []);
 		tmp_272107.id = "sequenceInput";
