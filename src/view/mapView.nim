@@ -83,7 +83,9 @@ proc initMap*() =
     let city = $document.getElementById("cityNew").value
     let team = $document.getElementById("teamNew").value
     let music = $document.getElementById("musicNew").value
-    initInfo()
+    document.getElementById("placeholder").style.display = "none"
+    document.getElementById("mainView").classList.remove("showLater")
+    document.getElementById("rightSideMenu").classList.remove("showLater")
     clear()
     mapViewModel.initMap(height, width, sequence, city, team, music)
     updateHeader(map)
@@ -96,7 +98,9 @@ proc loadMap*() =
     reader.onload = proc (e: FLoad) =
         let data = loadJson($reader.result)
         map = data.map
-        initInfo()
+        document.getElementById("placeholder").style.display = "none"
+        document.getElementById("mainView").classList.remove("showLater")
+        document.getElementById("rightSideMenu").classList.remove("showLater")
         clear()
         updateMapElement()
         updateHeader(map)

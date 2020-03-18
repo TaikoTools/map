@@ -12,9 +12,6 @@ proc updateInfoInstrument*(instrument: Instrument) =
     document.getElementById("angleInfo").value = $instrument.angle
 
 
-proc initInfo*() =
-    return
-
 proc renderInstrumentInfo*(): VNode =
     proc handler(ev: dom.Event, n: VNode) = 
         let x = parseInt($document.getElementById("x").value)
