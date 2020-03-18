@@ -1,5 +1,5 @@
 import dom
-import ../viewModel/mapViewModel
+from ../viewModel/mapViewModel import map
 import ../model/mapModel
 
 proc updateHeader*(map: Map) =
