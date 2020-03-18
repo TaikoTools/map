@@ -46,7 +46,7 @@ proc renderSideMenu*(): VNode =
                 input(`type` = "number", id = "widthNew", value = "0")
             tdiv():
                 label(`for` = "sequenceNew", class = "floatLabel"):
-                    text("Ordem da apredentação")
+                    text("Ordem da apresentação")
                 input(id = "sequenceNew")
             tdiv():
                 label(`for` = "cityNew", class = "floatLabel"):
@@ -63,18 +63,19 @@ proc renderSideMenu*(): VNode =
             tdiv(class = "btn", onclick = () => initMap()):
                 text("Criar")
         label(`for` = "load", class = "btn"):
-            text("Carregar")
+            text("Carregar mapa")
         input(`type` = "file" , onchange = () => loadMap(), id = "load", class = "hidden", accept = ".taiko", download = "a.taiko")
         tdiv(class = "btn", onclick = () => saveMap()):
-            text("Salvar")
-        tdiv(id = "instrumentType", class = "list"):
-            tdiv(onclick = selectInstrumentType):
-                text("Okedo")
-            tdiv(onclick = selectInstrumentType):
-                text("Shime")
-            tdiv(onclick = selectInstrumentType):
-                text("Nagado")
-            tdiv(onclick = selectInstrumentType):
-                text("Oodaiko")
-        tdiv(class = "btn", onclick = addNewInstrument):
-            text("Novo taiko")
+            text("Salvar mapa")
+        tdiv(class = "showLater"):
+            tdiv(id = "instrumentType", class = "list"):
+                tdiv(onclick = selectInstrumentType):
+                    text("Okedo")
+                tdiv(onclick = selectInstrumentType):
+                    text("Shime")
+                tdiv(onclick = selectInstrumentType):
+                    text("Nagado")
+                tdiv(onclick = selectInstrumentType):
+                    text("Oodaiko")
+            tdiv(class = "btn", onclick = addNewInstrument):
+                text("Novo taiko")
