@@ -2,6 +2,7 @@ import sequtils
 import dom
 import ../helper/seq
 import ../model/mapModel
+import ./instrumentListViewModel
 
 var map*: Map = Map()
 type InstrumentElement* = ref object of RootObj
@@ -47,3 +48,8 @@ proc updateInstrument*(instrument: InstrumentElement, x, y, height, width, angle
     instrument.data.width = width
     instrument.data.angle = angle
     instrument.updateInstrument(instrument.data)
+
+proc deleteSelected*() =
+    selected.e.parentNode.removeChild(selected.e)
+    instruments.delete(selected)
+    updateList(instruments.mapIt(it.data))
