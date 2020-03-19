@@ -36,6 +36,7 @@ input {
 label.floatLabel {
     position: absolute;
     font-size: 12px;
+    padding-left: 4px;
 }
 
 #ROOT {

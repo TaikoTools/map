@@ -1,27 +1,33 @@
-import karax / [vdom, karaxdsl, karax]
+import karax / [vdom, karaxdsl, karax, vstyles]
 import dom
 import strutils
 import ../model/mapModel
 from ../viewModel/mapViewModel import selected, updateInstrument, deleteSelected
 
 proc updateInfoInstrument*(instrument: Instrument) =
+    if (instrument == nil):
+        document.getElementById("instrumentInfo").style.display = "none"
+        return
     document.getElementById("x").value = $instrument.x
     document.getElementById("y").value = $instrument.y
     document.getElementById("heightInfo").value = $instrument.height
     document.getElementById("widthInfo").value = $instrument.width
     document.getElementById("angleInfo").value = $instrument.angle
+    document.getElementById("instrumentInfo").style.display = "block"
 
+proc handler(ev: dom.Event, n: VNode) = 
+    let x = parseInt($document.getElementById("x").value)
+    let y = parseInt($document.getElementById("y").value)
+    let height = parseInt($document.getElementById("heightInfo").value)
+    let width = parseInt($document.getElementById("widthInfo").value)
+    let angle = parseInt($document.getElementById("angleInfo").value)
+    if selected != nil:
+        selected.updateInstrument(x, y, height, width, angle)
 
 proc renderInstrumentInfo*(): VNode =
-    proc handler(ev: dom.Event, n: VNode) = 
-        let x = parseInt($document.getElementById("x").value)
-        let y = parseInt($document.getElementById("y").value)
-        let height = parseInt($document.getElementById("heightInfo").value)
-        let width = parseInt($document.getElementById("widthInfo").value)
-        let angle = parseInt($document.getElementById("angleInfo").value)
-        if selected != nil:
-            selected.updateInstrument(x, y, height, width, angle)
-    buildHtml(tdiv):
+    buildHtml(tdiv(id = "instrumentInfo", style = style(StyleAttr.display, "none"))):
+        h3(style=style(StyleAttr.textAlign, "center")):
+            text("Item selecionado")
         tdiv():
             label(`for` = "x", class = "floatLabel"):
                 text("x")

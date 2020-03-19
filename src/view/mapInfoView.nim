@@ -1,4 +1,4 @@
-import karax / [vdom, karaxdsl, karax]
+import karax / [vdom, karaxdsl, karax, vstyles]
 import dom
 import ../model/mapModel
 import ./headerView
@@ -18,6 +18,8 @@ proc renderMapInfo*(): VNode =
         updateHeader(sequence, city, team, music)
 
     buildHtml(tdiv):
+        h3(style=style(StyleAttr.textAlign, "center")):
+            text("Mapa")
         tdiv():
             label(`for` = "sequenceInput", class = "floatLabel"):
                 text("Ordem da apresentação")

@@ -61,7 +61,7 @@ proc clear() =
 
 proc removeSelection(e: Event) = 
     if e.target.id == "map" and selected != nil:
-        updateInfoInstrument(Instrument())
+        updateInfoInstrument(nil)
         selected.e.classList.remove("selected")
         selected = nil
 
