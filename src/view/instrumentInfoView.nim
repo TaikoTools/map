@@ -26,6 +26,8 @@ proc handler(ev: dom.Event, n: VNode) =
 
 proc renderInstrumentInfo*(): VNode =
     buildHtml(tdiv(id = "instrumentInfo", style = style(StyleAttr.display, "none"))):
+        h3(style=style(StyleAttr.textAlign, "center")):
+            text("Item selecionado")
         tdiv():
             label(`for` = "x", class = "floatLabel"):
                 text("x")
