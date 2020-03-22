@@ -2,6 +2,9 @@ import karax / [vdom, karaxdsl, karax]
 import src/view/sideMenuView
 import src/view/mapInfoView
 import src/view/instrumentInfoView
+import src/view/mapView
+import src/helper/storage
+import dom
 
 proc createDom(): VNode =
     result = buildHtml(tdiv):
@@ -20,4 +23,6 @@ proc createDom(): VNode =
             renderMapInfo()
             renderInstrumentInfo()
 
-setRenderer createDom
+setRenderer createDom, "ROOT", proc () = 
+    if (storage.getItem("quickSave") != nil):
+        loadMapFromJson($storage.getItem("quickSave"))

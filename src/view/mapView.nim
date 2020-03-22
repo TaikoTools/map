@@ -46,7 +46,9 @@ proc addInstrument(instrument: Instrument) =
         instrument.x = left - int((mapViewModel.map.width - width) / 2)
         instrument.y = top - int((mapViewModel.map.height - height) / 2)
         updateInfoInstrument(selected.data)
+        quickSave()
     )
+    quickSave()
     updateList(instruments.mapIt(it.data))
 
 proc addInstrument*(x, y, height, width, angle: int, instrumentType: InstrumentType) =
@@ -81,6 +83,7 @@ proc updateMapElement() =
     clear()
     updateHeader(mapViewModel.map)
     updateInfoMap(mapViewModel.map)
+    quickSave()
 
 proc initMap*() =
     let height = parseInt($document.getElementById("heightNew").value) * meter
@@ -92,16 +95,18 @@ proc initMap*() =
     mapViewModel.initMap(height, width, sequence, city, team, music)
     updateMapElement()
 
+proc loadMapFromJson*(json: string) = 
+    let data = loadJson(json)
+    map = data.map
+    updateMapElement()
+    for instrument in data.instruments:
+        addInstrument(instrument)
+
 proc loadMap*() =
     var reader = FileReader()
     var file = InputElement(document.getElementById("load")).files[0]
     reader.onload = proc (e: FLoad) =
-        let data = loadJson($reader.result)
-        map = data.map
-        updateMapElement()
-        echo $map.sequence
-        for instrument in data.instruments:
-            addInstrument(instrument)
+        loadMapFromJson($reader.result)
     
     reader.readAsText(file)
 
