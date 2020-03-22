@@ -2,11 +2,17 @@ import karax / [vdom, karaxdsl, karax]
 import src/view/sideMenuView
 import src/view/mapInfoView
 import src/view/instrumentInfoView
+import src/view/mapView
+import src/helper/storage
+import dom
 
 proc createDom(): VNode =
     result = buildHtml(tdiv):
         renderSideMenu()
-        img(src = "placeholder.png", id = "placeholder")
+        tdiv(id = "placeholder"):
+            img(src = "placeholder.png")
+            h2:
+                text("Comece criando um mapa novo")
         tdiv(id = "mainView", class="showLater"):
             tdiv(id = "header"):
                 tdiv(id = "sequence")
@@ -20,4 +26,6 @@ proc createDom(): VNode =
             renderMapInfo()
             renderInstrumentInfo()
 
-setRenderer createDom
+setRenderer createDom, "ROOT", proc () = 
+    if (storage.getItem("quickSave") != nil):
+        loadMapFromJson($storage.getItem("quickSave"))

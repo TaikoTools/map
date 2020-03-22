@@ -3,6 +3,7 @@ import dom
 import ../helper/seq
 import ../model/mapModel
 import ./instrumentListViewModel
+import ../helper/storage
 
 var map*: Map = Map()
 type InstrumentElement* = ref object of RootObj
@@ -34,12 +35,16 @@ proc loadJson*(json: string): SaveData =
     let data = fromJson(json)
     result = data
 
+proc quickSave*() = 
+    storage.setItem("quickSave", dataJson())
+
 proc updateInstrument*(element: InstrumentElement, instrument: Instrument) =
     element.e.style.height = $instrument.height & "px"
     element.e.style.width = $instrument.width & "px"
     element.e.style.left = $(int((mapViewModel.map.width - instrument.width) / 2) + instrument.x) & "px"
     element.e.style.top = $(int((mapViewModel.map.height - instrument.height) / 2) + instrument.y) & "px"
     element.e.style.transform = "rotate(" & $instrument.angle & "deg)"
+    quickSave()
 
 proc updateInstrument*(instrument: InstrumentElement, x, y, height, width, angle: int) =
     instrument.data.x = x

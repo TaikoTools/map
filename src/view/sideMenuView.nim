@@ -67,7 +67,7 @@ proc renderSideMenu*(): VNode =
         input(`type` = "file" , onchange = () => loadMap(), id = "load", class = "hidden", accept = ".taiko", download = "a.taiko")
         tdiv(class = "btn", onclick = () => saveMap()):
             text("Salvar mapa")
-        tdiv(class = "showLater"):
+        tdiv(id = "addInstrumentMenu", class = "showLater"):
             tdiv(id = "instrumentType", class = "list"):
                 tdiv(onclick = selectInstrumentType):
                     text("Okedo")
