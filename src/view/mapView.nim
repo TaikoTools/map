@@ -75,6 +75,12 @@ proc updateMapElement() =
     map.style.display = "block"
     document.getElementById("newMap").classList.remove("down")
     document.getElementById("map").addEventListener("mousedown", removeSelection)
+    document.getElementById("placeholder").style.display = "none"
+    document.getElementById("mainView").classList.remove("showLater")
+    document.getElementById("rightSideMenu").classList.remove("showLater")
+    clear()
+    updateHeader(mapViewModel.map)
+    updateInfoMap(mapViewModel.map)
 
 proc initMap*() =
     let height = parseInt($document.getElementById("heightNew").value) * meter
@@ -83,13 +89,7 @@ proc initMap*() =
     let city = $document.getElementById("cityNew").value
     let team = $document.getElementById("teamNew").value
     let music = $document.getElementById("musicNew").value
-    document.getElementById("placeholder").style.display = "none"
-    document.getElementById("mainView").classList.remove("showLater")
-    document.getElementById("rightSideMenu").classList.remove("showLater")
-    clear()
     mapViewModel.initMap(height, width, sequence, city, team, music)
-    updateHeader(map)
-    updateInfoMap(map)
     updateMapElement()
 
 proc loadMap*() =
@@ -98,13 +98,7 @@ proc loadMap*() =
     reader.onload = proc (e: FLoad) =
         let data = loadJson($reader.result)
         map = data.map
-        document.getElementById("placeholder").style.display = "none"
-        document.getElementById("mainView").classList.remove("showLater")
-        document.getElementById("rightSideMenu").classList.remove("showLater")
-        clear()
         updateMapElement()
-        updateHeader(map)
-        updateInfoMap(map)
         echo $map.sequence
         for instrument in data.instruments:
             addInstrument(instrument)
