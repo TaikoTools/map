@@ -9,7 +9,10 @@ import dom
 proc createDom(): VNode =
     result = buildHtml(tdiv):
         renderSideMenu()
-        img(src = "placeholder.png", id = "placeholder")
+        tdiv(id = "placeholder"):
+            img(src = "placeholder.png")
+            h2:
+                text("Comece criando um mapa novo")
         tdiv(id = "mainView", class="showLater"):
             tdiv(id = "header"):
                 tdiv(id = "sequence")
