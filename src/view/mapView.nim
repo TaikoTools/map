@@ -77,9 +77,11 @@ proc updateMapElement() =
     map.style.display = "block"
     document.getElementById("newMap").classList.remove("down")
     document.getElementById("map").addEventListener("mousedown", removeSelection)
+
     document.getElementById("placeholder").style.display = "none"
     document.getElementById("mainView").classList.remove("showLater")
     document.getElementById("rightSideMenu").classList.remove("showLater")
+    document.getElementById("addInstrumentMenu").classList.remove("showLater")
     clear()
     updateHeader(mapViewModel.map)
     updateInfoMap(mapViewModel.map)
