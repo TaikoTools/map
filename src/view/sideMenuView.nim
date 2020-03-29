@@ -5,6 +5,7 @@ import strutils
 from ../view/mapView import addInstrument, initMap, loadMap, saveMap
 import ../helper/constants
 import ../model/mapModel
+import ../helper/imgExporter
 
 var selectedType : InstrumentType
 
@@ -67,6 +68,8 @@ proc renderSideMenu*(): VNode =
         input(`type` = "file" , onchange = () => loadMap(), id = "load", class = "hidden", accept = ".taiko", download = "a.taiko")
         tdiv(class = "btn", onclick = () => saveMap()):
             text("Salvar mapa")
+        tdiv(class = "btn", onclick = () => exportMap()):
+            text("Exportar imagem")
         tdiv(id = "addInstrumentMenu", class = "showLater"):
             tdiv(id = "instrumentType", class = "list"):
                 tdiv(onclick = selectInstrumentType):
