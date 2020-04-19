@@ -58,3 +58,4 @@ proc deleteSelected*() =
     selected.e.parentNode.removeChild(selected.e)
     instruments.delete(selected)
     updateList(instruments.mapIt(it.data))
+    quickSave()
