@@ -33,7 +33,26 @@ type
 func toJson*(map: Map, instruments: seq[Instrument]) : string =
     result = $ %* {"map": map, "instruments": instruments}
 
-func fromJson*(json: string): SaveData =
+proc instrumentFromJson*(json: string): Instrument =
+    let jsonObj = parseJson(json)
+    let
+        x = jsonObj["x"].getInt()
+        y = jsonObj["y"].getInt()
+        height = jsonObj["height"].getInt()
+        width = jsonObj["width"].getInt()
+        angle = jsonObj["angle"].getInt()
+        instrumentType = parseEnum[InstrumentType](jsonObj["instrumentType"].getStr())
+    result = Instrument(
+        x: x,
+        y: y,
+        height: height,
+        width: width,
+        angle: angle,
+        instrumentType: instrumentType
+    )
+
+
+proc fromJson*(json: string): SaveData =
     let jsonObj = parseJson(json)
     let map = Map()
     var instruments = newSeq[Instrument]()
@@ -44,21 +63,6 @@ func fromJson*(json: string): SaveData =
     map.city = jsonObj["map"]["city"].getStr()
     map.music = jsonObj["map"]["music"].getStr()
     for instrumentJson in jsonObj["instruments"]:
-        let
-            x = instrumentJson["x"].getInt()
-            y = instrumentJson["y"].getInt()
-            height = instrumentJson["height"].getInt()
-            width = instrumentJson["width"].getInt()
-            angle = instrumentJson["angle"].getInt()
-            instrumentType = parseEnum[InstrumentType](instrumentJson["instrumentType"].getStr())
-            instrument = Instrument(
-                x: x,
-                y: y,
-                height: height,
-                width: width,
-                angle: angle,
-                instrumentType: instrumentType
-            )
-        instruments.add(instrument)
+        instruments.add(instrumentFromJson($ instrumentJson))
     result = SaveData(instruments: instruments, map: map)
 

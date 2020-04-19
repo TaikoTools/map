@@ -32,6 +32,7 @@ setRenderer createDom, "ROOT", proc () =
         loadMapFromJson($storage.getItem("quickSave"))
     window.addEventListener("keydown", proc (e: Event) =
         let key = KeyboardEvent(e).keyCode
+        let ctrl = KeyboardEvent(e).ctrlKey
         echo KeyboardEvent(e).keyCode
         case (key)
         of 37: # Left
@@ -48,6 +49,12 @@ setRenderer createDom, "ROOT", proc () =
             mapView.moveSelected(0, 1)
         of 46: # Delete
             mapViewModel.deleteSelected()
+        of 67: # Ctrl+c
+            if (ctrl):
+                mapView.copySelected()
+        of 86: # Ctrl+v
+            if (ctrl):
+                mapView.pasteSelected()
         else:
             return
     )

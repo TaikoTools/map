@@ -1,9 +1,11 @@
 import dom
 import strutils
+import json
 from sequtils import mapIt
 import ../helper/dragable
 import ../helper/seq
 import ../helper/constants
+import ../helper/storage
 import ../helper/svg
 import ../helper/fileReader
 import ../viewModel/mapViewModel
@@ -124,3 +126,10 @@ proc moveSelected*(dx, dy: int) =
     selected.data.y += dy
     selected.updateInstrument(selected.data)
     updateInfoInstrument(selected.data)
+
+proc copySelected*() =
+    storage.setItem("clipboard", $ %* selected.data)
+
+proc pasteSelected*() =
+    let instrument = instrumentFromJson($ storage.getItem("clipboard"))
+    addInstrument(instrument)
