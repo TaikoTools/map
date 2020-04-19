@@ -35,12 +35,16 @@ setRenderer createDom, "ROOT", proc () =
         echo KeyboardEvent(e).keyCode
         case (key)
         of 37: # Left
+            e.preventDefault()
             mapView.moveSelected(-1, 0)
         of 38: # Up
+            e.preventDefault()
             mapView.moveSelected(0, -1)
         of 39: # Right
+            e.preventDefault()
             mapView.moveSelected(1, 0)
         of 40: # Down
+            e.preventDefault()
             mapView.moveSelected(0, 1)
         of 46: # Delete
             mapViewModel.deleteSelected()

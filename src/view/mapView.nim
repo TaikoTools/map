@@ -61,8 +61,10 @@ proc clear() =
     instruments.deleteAll()
     updateList(instruments.mapIt(it.data))
 
-proc removeSelection(e: Event) = 
-    if e.target.id == "map" and selected != nil:
+proc contains(e, t: Node) : bool {. importcpp .}
+proc removeSelection(e: Event) =
+    let map = Node(document.getElementById("map"))
+    if (not map.contains(e.target) or e.target.id == "map") and selected != nil:
         updateInfoInstrument(nil)
         selected.e.classList.remove("selected")
         selected = nil
@@ -76,7 +78,7 @@ proc updateMapElement() =
     map.style.backgroundPosition = $(height / 2) & "px " & $(width / 2) & "px"
     map.style.display = "block"
     document.getElementById("newMap").classList.remove("down")
-    document.getElementById("map").addEventListener("mousedown", removeSelection)
+    document.addEventListener("mousedown", removeSelection)
     document.getElementById("placeholder").style.display = "none"
     document.getElementById("mainView").classList.remove("showLater")
     document.getElementById("rightSideMenu").classList.remove("showLater")
