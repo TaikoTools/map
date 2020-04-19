@@ -77,7 +77,6 @@ proc updateMapElement() =
     map.style.display = "block"
     document.getElementById("newMap").classList.remove("down")
     document.getElementById("map").addEventListener("mousedown", removeSelection)
-
     document.getElementById("placeholder").style.display = "none"
     document.getElementById("mainView").classList.remove("showLater")
     document.getElementById("rightSideMenu").classList.remove("showLater")
@@ -117,3 +116,9 @@ proc saveMap*() =
     link.setAttr("download", "mapa.taiko")
     link.setAttr("href", "data:text/json;charset=utf-8," & dataJson())
     link.click()
+
+proc moveSelected*(dx, dy: int) =
+    selected.data.x += dx
+    selected.data.y += dy
+    selected.updateInstrument(selected.data)
+    updateInfoInstrument(selected.data)

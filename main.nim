@@ -3,6 +3,7 @@ import src/view/sideMenuView
 import src/view/mapInfoView
 import src/view/instrumentInfoView
 import src/view/mapView
+import src/viewModel/mapViewModel
 import src/helper/storage
 import dom
 
@@ -29,3 +30,20 @@ proc createDom(): VNode =
 setRenderer createDom, "ROOT", proc () = 
     if (storage.getItem("quickSave") != nil):
         loadMapFromJson($storage.getItem("quickSave"))
+    window.addEventListener("keydown", proc (e: Event) =
+        let key = KeyboardEvent(e).keyCode
+        echo KeyboardEvent(e).keyCode
+        case (key)
+        of 37: # Left
+            mapView.moveSelected(-1, 0)
+        of 38: # Up
+            mapView.moveSelected(0, -1)
+        of 39: # Right
+            mapView.moveSelected(1, 0)
+        of 40: # Down
+            mapView.moveSelected(0, 1)
+        of 46: # Delete
+            mapViewModel.deleteSelected()
+        else:
+            return
+    )
