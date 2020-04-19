@@ -2721,10 +2721,12 @@ function update_info_instrument_270093(instrument_270095) {
 	
 }
 
-function remove_selection_273849(e_273851) {
+function remove_selection_273853(e_273855) {
 			var Tmp1;
+			var Tmp2;
 
-			if (!(e_273851.target.id == "map")) Tmp1 = false; else {				Tmp1 = !((selected_268079[0] == null));			}		if (Tmp1) {
+		var map_273856 = document.getElementById("map");
+			if (!(map_273856.contains(e_273855.target))) Tmp2 = true; else {				Tmp2 = (e_273855.target.id == "map");			}			if (!Tmp2) Tmp1 = false; else {				Tmp1 = !((selected_268079[0] == null));			}		if (Tmp1) {
 		update_info_instrument_270093(null);
 		selected_268079[0].e.classList.remove("selected");
 		selected_268079[0] = null;
@@ -4534,16 +4536,16 @@ function quick_save_268673() {
 	
 }
 
-function update_map_element_273873() {
-		var map_273875 = document.getElementById("map");
-		var height_273876 = map_268014[0].height;
-		var width_273877 = map_268014[0].width;
-		map_273875.style.height = toJSStr((cstrToNimstr((height_273876)+"") || []).concat(makeNimstrLit("px") || []));
-		map_273875.style.width = toJSStr((cstrToNimstr((width_273877)+"") || []).concat(makeNimstrLit("px") || []));
-		map_273875.style.backgroundPosition = toJSStr((cstrToNimstr((HEX2F_27017(height_273876, 2))+"") || []).concat(makeNimstrLit("px ") || [],cstrToNimstr((HEX2F_27017(width_273877, 2))+"") || [],makeNimstrLit("px") || []));
-		map_273875.style.display = "block";
+function update_map_element_273878() {
+		var map_273880 = document.getElementById("map");
+		var height_273881 = map_268014[0].height;
+		var width_273882 = map_268014[0].width;
+		map_273880.style.height = toJSStr((cstrToNimstr((height_273881)+"") || []).concat(makeNimstrLit("px") || []));
+		map_273880.style.width = toJSStr((cstrToNimstr((width_273882)+"") || []).concat(makeNimstrLit("px") || []));
+		map_273880.style.backgroundPosition = toJSStr((cstrToNimstr((HEX2F_27017(height_273881, 2))+"") || []).concat(makeNimstrLit("px ") || [],cstrToNimstr((HEX2F_27017(width_273882, 2))+"") || [],makeNimstrLit("px") || []));
+		map_273880.style.display = "block";
 		document.getElementById("newMap").classList.remove("down");
-		document.getElementById("map").addEventListener("mousedown", remove_selection_273849, false);
+		document.addEventListener("mousedown", remove_selection_273853, false);
 		document.getElementById("placeholder").style.display = "none";
 		document.getElementById("mainView").classList.remove("showLater");
 		document.getElementById("rightSideMenu").classList.remove("showLater");
@@ -4556,15 +4558,15 @@ function update_map_element_273873() {
 	
 }
 
-function init_map_273891() {
-		var height_273893 = mulInt(nsuParseInt(cstrToNimstr(document.getElementById("heightNew").value)), 66);
-		var width_273894 = mulInt(nsuParseInt(cstrToNimstr(document.getElementById("widthNew").value)), 66);
-		var sequence_273895 = cstrToNimstr(document.getElementById("sequenceNew").value);
-		var city_273896 = cstrToNimstr(document.getElementById("cityNew").value);
-		var team_273897 = cstrToNimstr(document.getElementById("teamNew").value);
-		var music_273898 = cstrToNimstr(document.getElementById("musicNew").value);
-		init_map_268132(height_273893, width_273894, sequence_273895, city_273896, team_273897, music_273898);
-		update_map_element_273873();
+function init_map_273896() {
+		var height_273898 = mulInt(nsuParseInt(cstrToNimstr(document.getElementById("heightNew").value)), 66);
+		var width_273899 = mulInt(nsuParseInt(cstrToNimstr(document.getElementById("widthNew").value)), 66);
+		var sequence_273900 = cstrToNimstr(document.getElementById("sequenceNew").value);
+		var city_273901 = cstrToNimstr(document.getElementById("cityNew").value);
+		var team_273902 = cstrToNimstr(document.getElementById("teamNew").value);
+		var music_273903 = cstrToNimstr(document.getElementById("musicNew").value);
+		init_map_268132(height_273898, width_273899, sequence_273900, city_273901, team_273902, music_273903);
+		update_map_element_273878();
 
 	
 }
@@ -5397,21 +5399,21 @@ function add_instrument_273014(instrument_273016) {
 	
 }
 
-function load_map_from_json_273912(json_273914) {
-		var data_273915 = load_json_268655(json_273914);
-		map_268014[0] = data_273915.map;
-		update_map_element_273873();
+function load_map_from_json_273917(json_273919) {
+		var data_273920 = load_json_268655(json_273919);
+		map_268014[0] = data_273920.map;
+		update_map_element_273878();
 		L1: do {
-			var instrument_273922 = null;
+			var instrument_273927 = null;
 			var colontmp__277603 = null;
-			colontmp__277603 = data_273915.instruments;
+			colontmp__277603 = data_273920.instruments;
 			var i_277604 = 0;
 			var l_277605 = (colontmp__277603 != null ? colontmp__277603.length : 0);
 			L2: do {
 					L3: while (true) {
 					if (!(i_277604 < l_277605)) break L3;
-						instrument_273922 = colontmp__277603[chckIndx(i_277604, 0, (colontmp__277603 != null ? colontmp__277603.length : 0)+0-1)-0];
-						add_instrument_273014(instrument_273922);
+						instrument_273927 = colontmp__277603[chckIndx(i_277604, 0, (colontmp__277603 != null ? colontmp__277603.length : 0)+0-1)-0];
+						add_instrument_273014(instrument_273927);
 						i_277604 = addInt(i_277604, 1);
 						if (!(((colontmp__277603 != null ? colontmp__277603.length : 0) == l_277605))) {
 						failed_assert_impl_15266(makeNimstrLit("iterators.nim(189, 11) `len(a) == L` the length of the seq changed while iterating over it"));
@@ -5424,28 +5426,28 @@ function load_map_from_json_273912(json_273914) {
 	
 }
 
-function load_map_273936() {
+function load_map_273941() {
 		var Tmp1;
 
-		function HEX3Aanonymous_273940(e_273942) {
-				load_map_from_json_273912(cstrToNimstr(reader_273938.result));
+		function HEX3Aanonymous_273945(e_273947) {
+				load_map_from_json_273917(cstrToNimstr(reader_273943.result));
 
 			
 		}
 
-		var reader_273938 = new FileReader();
-		var file_273939 = (Tmp1 = document.getElementById("load").files, Tmp1)[chckIndx(0, 0, (Tmp1 != null ? Tmp1.length : 0)+0-1)-0];
-		reader_273938.onload = HEX3Aanonymous_273940;
-		reader_273938.readAsText(file_273939);
+		var reader_273943 = new FileReader();
+		var file_273944 = (Tmp1 = document.getElementById("load").files, Tmp1)[chckIndx(0, 0, (Tmp1 != null ? Tmp1.length : 0)+0-1)-0];
+		reader_273943.onload = HEX3Aanonymous_273945;
+		reader_273943.readAsText(file_273944);
 
 	
 }
 
-function save_map_274015() {
-		var link_274017 = document.createElement("a");
-		link_274017.setAttribute("download", "mapa.taiko");
-		link_274017.setAttribute("href", toJSStr((makeNimstrLit("data:text/json;charset=utf-8,") || []).concat(data_json_268155() || [])));
-		link_274017.click();
+function save_map_274020() {
+		var link_274022 = document.createElement("a");
+		link_274022.setAttribute("download", "mapa.taiko");
+		link_274022.setAttribute("href", toJSStr((makeNimstrLit("data:text/json;charset=utf-8,") || []).concat(data_json_268155() || [])));
+		link_274022.click();
 
 	
 }
@@ -5518,19 +5520,19 @@ function add_new_instrument_276028(ev_276030, n_276031) {
 function render_side_menu_276256() {
 
 		function HEX3Aanonymous_276398() {
-				init_map_273891();
+				init_map_273896();
 
 			
 		}
 
 		function HEX3Aanonymous_276425() {
-				load_map_273936();
+				load_map_273941();
 
 			
 		}
 
 		function HEX3Aanonymous_276448() {
-				save_map_274015();
+				save_map_274020();
 
 			
 		}
@@ -5904,6 +5906,7 @@ function delete_selected_268726() {
 			} while(false);
 		} while(false);
 		update_list_260040(resultHEX60gensym269218_269620);
+		quick_save_268673();
 
 	
 }
@@ -6044,9 +6047,9 @@ function create_dom_277092() {
 
 }
 
-function move_selected_274031(dx_274033, dy_274034) {
-		selected_268079[0].data.x = addInt(selected_268079[0].data.x, dx_274033);
-		selected_268079[0].data.y = addInt(selected_268079[0].data.y, dy_274034);
+function move_selected_274036(dx_274038, dy_274039) {
+		selected_268079[0].data.x = addInt(selected_268079[0].data.x, dx_274038);
+		selected_268079[0].data.y = addInt(selected_268079[0].data.y, dy_274039);
 		update_instrument_268688(selected_268079[0], selected_268079[0].data);
 		update_info_instrument_270093(selected_268079[0].data);
 
@@ -6061,16 +6064,20 @@ function HEX3Aanonymous_277178() {
 				rawEcho(cstrToNimstr((e_277182.keyCode)+""));
 				switch (key_277183) {
 				case 37:
-					move_selected_274031(-1, 0);
+					e_277182.preventDefault();
+					move_selected_274036(-1, 0);
 					break;
 				case 38:
-					move_selected_274031(0, -1);
+					e_277182.preventDefault();
+					move_selected_274036(0, -1);
 					break;
 				case 39:
-					move_selected_274031(1, 0);
+					e_277182.preventDefault();
+					move_selected_274036(1, 0);
 					break;
 				case 40:
-					move_selected_274031(0, 1);
+					e_277182.preventDefault();
+					move_selected_274036(0, 1);
 					break;
 				case 46:
 					delete_selected_268726();
@@ -6085,7 +6092,7 @@ function HEX3Aanonymous_277178() {
 		}
 
 		if (!((window.localStorage.getItem("quickSave") == null))) {
-		load_map_from_json_273912(cstrToNimstr(window.localStorage.getItem("quickSave")));
+		load_map_from_json_273917(cstrToNimstr(window.localStorage.getItem("quickSave")));
 		}
 		
 		window.addEventListener("keydown", HEX3Aanonymous_277180, false);
