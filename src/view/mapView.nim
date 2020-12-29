@@ -80,7 +80,7 @@ proc updateMapElement() =
     map.style.backgroundPosition = $(height / 2) & "px " & $(width / 2) & "px"
     map.style.display = "block"
     document.getElementById("newMap").classList.remove("down")
-    document.addEventListener("mousedown", removeSelection)
+    document.getElementById("map").addEventListener("mousedown", removeSelection)
     document.getElementById("placeholder").style.display = "none"
     document.getElementById("mainView").classList.remove("showLater")
     document.getElementById("rightSideMenu").classList.remove("showLater")

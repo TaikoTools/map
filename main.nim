@@ -33,7 +33,6 @@ setRenderer createDom, "ROOT", proc () =
     window.addEventListener("keydown", proc (e: Event) =
         let key = KeyboardEvent(e).keyCode
         let ctrl = KeyboardEvent(e).ctrlKey
-        echo KeyboardEvent(e).keyCode
         case (key)
         of 37: # Left
             e.preventDefault()
