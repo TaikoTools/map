@@ -81,4 +81,4 @@ proc renderSideMenu*(): VNode =
                 tdiv(onclick = selectInstrumentType):
                     text("Oodaiko")
             tdiv(class = "btn", onclick = addNewInstrument):
-                text("Novo taiko")
+                text("Adicionar")
