@@ -5567,7 +5567,7 @@ function render_side_menu_12575256() {
     var tmp_12575290 = tree_9825445(43, []);
     tmp_12575290.class = "btn";
     add_event_handler_10745118(tmp_12575290, 0, add_new_instrument_12567028, kxi_10182284[0]);
-    add_9815072(tmp_12575290, text_9825548(makeNimstrLit("Novo taiko")));
+    add_9815072(tmp_12575290, text_9825548(makeNimstrLit("Adicionar")));
     add_9815072(tmp_12575284, tmp_12575290);
     add_9815072(tmp_12575259, tmp_12575284);
     result_12575258 = tmp_12575259;
