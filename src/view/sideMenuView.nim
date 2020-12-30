@@ -19,6 +19,8 @@ proc addNewInstrument(ev: Event, n: VNode) =
             addInstrument(0, 0, 40, int(1.6*shaku), 0, selectedType)
         of Oodaiko:
             addInstrument(0, 0, 45, int(3*shaku), 0, selectedType)
+        of Tekkan:
+            addInstrument(0, 0, 15, int(2*shaku), 0, selectedType)
 
 proc showNewMapMenu(ev: Event, n: VNode) =
     if document.getElementById("newMap").classList.contains("down"):
@@ -80,5 +82,7 @@ proc renderSideMenu*(): VNode =
                     text("Nagado")
                 tdiv(onclick = selectInstrumentType):
                     text("Oodaiko")
+                tdiv(onclick = selectInstrumentType):
+                    text("Tekkan")
             tdiv(class = "btn", onclick = addNewInstrument):
                 text("Adicionar")
