@@ -7,7 +7,8 @@ type
         Nagado,
         Shime,
         Oodaiko,
-        Tekkan
+        Tekkan,
+        Dora
 
     Instrument* = ref InstrumentObj
     InstrumentObj* = object of RootObj
