@@ -5743,6 +5743,7 @@ function delete_12450026(x_12450031, x_12450031_Idx, i_12450032) {
   
 }
 function delete_selected_12445101() {
+    document.getElementById("instrumentInfo").style.display = "none";
     selected_12416103[0].e.parentNode.removeChild(selected_12416103[0].e);
     L1: do {
       var iHEX60gensym12445104_12450014 = 0;
@@ -5974,12 +5975,14 @@ function HEX3Aanonymous_12605070() {
           break;
         case 67:
           if (ctrl_12610005) {
+          e_12610003.preventDefault();
           copy_selected_12560224();
           }
           
           break;
         case 86:
           if (ctrl_12610005) {
+          e_12610003.preventDefault();
           paste_selected_12565019();
           }
           
