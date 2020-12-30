@@ -29,6 +29,8 @@ proc addInstrument(instrument: Instrument) =
             svgNagado
         of Tekkan:
             svgTekkan
+        of Dora:
+            svgDora
     element.innerHTML = svg
     element.style.position = "absolute"
     map.appendChild(element)
