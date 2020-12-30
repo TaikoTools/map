@@ -76,17 +76,8 @@ proc renderSideMenu*(): VNode =
             text("Exportar imagem")
         tdiv(id = "addInstrumentMenu", class = "showLater"):
             tdiv(id = "instrumentType", class = "list"):
-                tdiv(onclick = selectInstrumentType):
-                    text("Okedo")
-                tdiv(onclick = selectInstrumentType):
-                    text("Shime")
-                tdiv(onclick = selectInstrumentType):
-                    text("Nagado")
-                tdiv(onclick = selectInstrumentType):
-                    text("Oodaiko")
-                tdiv(onclick = selectInstrumentType):
-                    text("Tekkan")
-                tdiv(onclick = selectInstrumentType):
-                    text("Dora")
+                for instrument in InstrumentType:
+                    tdiv(onclick = selectInstrumentType):
+                        text($instrument)
             tdiv(class = "btn", onclick = addNewInstrument):
                 text("Adicionar")
