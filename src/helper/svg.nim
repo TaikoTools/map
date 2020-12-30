@@ -16,3 +16,11 @@ const svgNagado* = """<svg width="100%" height="100%">
   <ellipse stroke="black" stroke-width="1" fill="#c0c0c0" cx="50%" rx="43%" ry="10%" cy="10%"></ellipse> 
 Sorry, your browser does not support inline SVG.
 </svg>"""
+
+const svgTekkan* = """</svg>
+ <svg width="100%" height="100%">
+  <rect x="33%" stroke="black" stroke-width="1" fill="#c0c0c0" width="34%" height="100%" y="0%"></rect>
+  <rect x="0%" stroke="black" stroke-width="1" fill="#c0c0c0" width="33%" height="60%" y="20%"></rect>
+  <rect x="67%" stroke="black" stroke-width="1" fill="#c0c0c0" width="33%" height="60%" y="20%"></rect>
+Sorry, your browser does not support inline SVG.
+</svg>"""
