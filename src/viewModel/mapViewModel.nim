@@ -56,6 +56,7 @@ proc updateInstrument*(instrument: InstrumentElement, x, y, height, width, angle
     instrument.updateInstrument(instrument.data)
 
 proc deleteSelected*() =
+    document.getElementById("instrumentInfo").style.display = "none" # Gambiarra para funcionar
     selected.e.parentNode.removeChild(selected.e)
     instruments.delete(selected)
     updateList(instruments.mapIt(it.data))
