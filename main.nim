@@ -50,9 +50,11 @@ setRenderer createDom, "ROOT", proc () =
             mapViewModel.deleteSelected()
         of 67: # Ctrl+c
             if (ctrl):
+                e.preventDefault()
                 mapView.copySelected()
         of 86: # Ctrl+v
             if (ctrl):
+                e.preventDefault()
                 mapView.pasteSelected()
         else:
             return
