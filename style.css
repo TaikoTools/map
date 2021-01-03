@@ -5,6 +5,8 @@ html {
 body {
     min-height: 100%;
     margin: 0;
+    background-color: #89a3d5;
+    padding: 10px 0;
 }
 
 .btn {
@@ -46,18 +48,22 @@ label.floatLabel {
     grid-template-columns: 220px auto 220px;
 }
 
+#mainView {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+}
+
 #sideMenu {
     grid-column: 1;
     display: flex;
     flex-direction: column;
-    background-color: #89a3d5;
 }
 
 #rightSideMenu {
     grid-column: 3;
     display: flex;
     flex-direction: column;
-    background-color: #89a3d5;
 }
 
 #map {
