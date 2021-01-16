@@ -21,10 +21,10 @@ var NTI622227 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
 var NTI622225 = {size: 0,kind: 22,base: null,node: null,finalizer: null};
 var NTI622241 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
 var NTI622239 = {size: 0,kind: 22,base: null,node: null,finalizer: null};
-var NTI12416030 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
-var NTI12137088 = {size: 0,kind: 22,base: null,node: null,finalizer: null};
-var NTI12137111 = {size: 0,kind: 24,base: null,node: null,finalizer: null};
-var NTI12137092 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
+var NTI12416043 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
+var NTI12138088 = {size: 0,kind: 22,base: null,node: null,finalizer: null};
+var NTI12138111 = {size: 0,kind: 24,base: null,node: null,finalizer: null};
+var NTI12138092 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
 var NTI12140002 = {size: 0, kind: 18, base: null, node: null, finalizer: null};
 var NTI11336084 = {size: 0,kind: 24,base: null,node: null,finalizer: null};
 var NTI163 = {size: 0,kind: 1,base: null,node: null,finalizer: null};
@@ -38,13 +38,13 @@ var NTI11336073 = {size: 0, kind: 18, base: null, node: null, finalizer: null};
 var NTI11336070 = {size: 0,kind: 24,base: null,node: null,finalizer: null};
 var NTI11336067 = {size: 0, kind: 18, base: null, node: null, finalizer: null};
 var NTI6251 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
-var NTI12137086 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
-var NTI12137084 = {size: 0,kind: 22,base: null,node: null,finalizer: null};
+var NTI12138086 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
+var NTI12138084 = {size: 0,kind: 22,base: null,node: null,finalizer: null};
 var NTI12145100 = {size: 0,kind: 24,base: null,node: null,finalizer: null};
 var NTI4210232 = {size: 0,kind: 31,base: null,node: null,finalizer: null};
 var NTI4465011 = {size: 0, kind: 18, base: null, node: null, finalizer: null};
 var NTI6245 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
-var NTI12137082 = {size: 0, kind: 14, base: null, node: null, finalizer: null};
+var NTI12138082 = {size: 0, kind: 14, base: null, node: null, finalizer: null};
 var NTI6235 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
 var NTI6253 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
 var NTI6221 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
@@ -106,17 +106,17 @@ var NTI6217 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
 var NTI6008 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
 var NTI143 = {size: 0,kind: 31,base: null,node: null,finalizer: null};
 var NTI112 = {size: 0,kind: 28,base: null,node: null,finalizer: null};
-var NTI12137090 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
-var NNI12137090 = {kind: 2, len: 6, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "sequence", len: 0, typ: NTI112, name: "sequence", sons: null}, 
+var NTI12138090 = {size: 0, kind: 17, base: null, node: null, finalizer: null};
+var NNI12138090 = {kind: 2, len: 6, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "sequence", len: 0, typ: NTI112, name: "sequence", sons: null}, 
 {kind: 1, offset: "city", len: 0, typ: NTI112, name: "city", sons: null}, 
 {kind: 1, offset: "team", len: 0, typ: NTI112, name: "team", sons: null}, 
 {kind: 1, offset: "music", len: 0, typ: NTI112, name: "music", sons: null}, 
 {kind: 1, offset: "height", len: 0, typ: NTI143, name: "height", sons: null}, 
 {kind: 1, offset: "width", len: 0, typ: NTI143, name: "width", sons: null}]};
-NTI12137090.node = NNI12137090;
+NTI12138090.node = NNI12138090;
 var NNI6008 = {kind: 2, len: 0, offset: 0, typ: null, name: null, sons: []};
 NTI6008.node = NNI6008;
-NTI12137090.base = NTI6008;
+NTI12138090.base = NTI6008;
 NTI6281.base = NTI6217;
 NTI6286.base = NTI6217;
 var NNI6217 = {kind: 2, len: 5, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "parent", len: 0, typ: NTI6281, name: "parent", sons: null}, 
@@ -513,29 +513,29 @@ NTI6253.base = NTI6219;
 var NNI6235 = {kind: 2, len: 0, offset: 0, typ: null, name: null, sons: []};
 NTI6235.node = NNI6235;
 NTI6235.base = NTI6233;
-var NNI12137082 = {kind: 2, offset: 0, typ: null, name: null, len: 6, sons: {"0": {kind: 1, offset: 0, typ: NTI12137082, name: "Okedo", len: 0, sons: null}, 
-"1": {kind: 1, offset: 1, typ: NTI12137082, name: "Nagado", len: 0, sons: null}, 
-"2": {kind: 1, offset: 2, typ: NTI12137082, name: "Shime", len: 0, sons: null}, 
-"3": {kind: 1, offset: 3, typ: NTI12137082, name: "Oodaiko", len: 0, sons: null}, 
-"4": {kind: 1, offset: 4, typ: NTI12137082, name: "Tekkan", len: 0, sons: null}, 
-"5": {kind: 1, offset: 5, typ: NTI12137082, name: "Dora", len: 0, sons: null}}};
-NTI12137082.node = NNI12137082;
+var NNI12138082 = {kind: 2, offset: 0, typ: null, name: null, len: 6, sons: {"0": {kind: 1, offset: 0, typ: NTI12138082, name: "Okedo", len: 0, sons: null}, 
+"1": {kind: 1, offset: 1, typ: NTI12138082, name: "Nagado", len: 0, sons: null}, 
+"2": {kind: 1, offset: 2, typ: NTI12138082, name: "Shime", len: 0, sons: null}, 
+"3": {kind: 1, offset: 3, typ: NTI12138082, name: "Oodaiko", len: 0, sons: null}, 
+"4": {kind: 1, offset: 4, typ: NTI12138082, name: "Tekkan", len: 0, sons: null}, 
+"5": {kind: 1, offset: 5, typ: NTI12138082, name: "Dora", len: 0, sons: null}}};
+NTI12138082.node = NNI12138082;
 var NNI6245 = {kind: 2, len: 0, offset: 0, typ: null, name: null, sons: []};
 NTI6245.node = NNI6245;
 NTI6245.base = NTI6243;
 var NNI4465011 = {kind: 2, len: 2, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "a", len: 0, typ: NTI4210232, name: "a", sons: null}, 
 {kind: 1, offset: "b", len: 0, typ: NTI143, name: "b", sons: null}]};
 NTI4465011.node = NNI4465011;
-var NNI12137086 = {kind: 2, len: 6, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "x", len: 0, typ: NTI143, name: "x", sons: null}, 
+var NNI12138086 = {kind: 2, len: 6, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "x", len: 0, typ: NTI143, name: "x", sons: null}, 
 {kind: 1, offset: "y", len: 0, typ: NTI143, name: "y", sons: null}, 
 {kind: 1, offset: "height", len: 0, typ: NTI143, name: "height", sons: null}, 
 {kind: 1, offset: "width", len: 0, typ: NTI143, name: "width", sons: null}, 
 {kind: 1, offset: "angle", len: 0, typ: NTI143, name: "angle", sons: null}, 
-{kind: 1, offset: "instrumentType", len: 0, typ: NTI12137082, name: "instrumentType", sons: null}]};
-NTI12137086.node = NNI12137086;
-NTI12137086.base = NTI6008;
-NTI12137084.base = NTI12137086;
-NTI12145100.base = NTI12137084;
+{kind: 1, offset: "instrumentType", len: 0, typ: NTI12138082, name: "instrumentType", sons: null}]};
+NTI12138086.node = NNI12138086;
+NTI12138086.base = NTI6008;
+NTI12138084.base = NTI12138086;
+NTI12145100.base = NTI12138084;
 var NNI6251 = {kind: 2, len: 0, offset: 0, typ: null, name: null, sons: []};
 NTI6251.node = NNI6251;
 NTI6251.base = NTI6219;
@@ -571,12 +571,12 @@ NTI11336067.node = NNI11336067;
 var NNI12140002 = {kind: 2, len: 2, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "Field0", len: 0, typ: NTI112, name: "Field0", sons: null}, 
 {kind: 1, offset: "Field1", len: 0, typ: NTI11336043, name: "Field1", sons: null}]};
 NTI12140002.node = NNI12140002;
-NTI12137111.base = NTI12137084;
-NTI12137088.base = NTI12137090;
-var NNI12137092 = {kind: 2, len: 2, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "instruments", len: 0, typ: NTI12137111, name: "instruments", sons: null}, 
-{kind: 1, offset: "map", len: 0, typ: NTI12137088, name: "map", sons: null}]};
-NTI12137092.node = NNI12137092;
-NTI12137092.base = NTI6008;
+NTI12138111.base = NTI12138084;
+NTI12138088.base = NTI12138090;
+var NNI12138092 = {kind: 2, len: 2, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "instruments", len: 0, typ: NTI12138111, name: "instruments", sons: null}, 
+{kind: 1, offset: "map", len: 0, typ: NTI12138088, name: "map", sons: null}]};
+NTI12138092.node = NNI12138092;
+NTI12138092.base = NTI6008;
 var NNI622227 = {kind: 2, len: 0, offset: 0, typ: null, name: null, sons: []};
 NTI622227.node = NNI622227;
 NTI622227.base = NTI6008;
@@ -627,10 +627,10 @@ var NNI622241 = {kind: 2, len: 19, offset: 0, typ: null, name: null, sons: [{kin
 NTI622241.node = NNI622241;
 NTI622241.base = NTI622233;
 NTI622239.base = NTI622241;
-var NNI12416030 = {kind: 2, len: 2, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "e", len: 0, typ: NTI622239, name: "e", sons: null}, 
-{kind: 1, offset: "data", len: 0, typ: NTI12137084, name: "data", sons: null}]};
-NTI12416030.node = NNI12416030;
-NTI12416030.base = NTI6008;
+var NNI12416043 = {kind: 2, len: 2, offset: 0, typ: null, name: null, sons: [{kind: 1, offset: "e", len: 0, typ: NTI622239, name: "e", sons: null}, 
+{kind: 1, offset: "data", len: 0, typ: NTI12138084, name: "data", sons: null}]};
+NTI12416043.node = NNI12416043;
+NTI12416043.base = NTI6008;
 function cstrToNimstr(c_225079) {
       var ln = c_225079.length;
   var result = new Array(ln);
@@ -1127,16 +1127,16 @@ var gid_9765032 = [0];
 var object_id_9900031 = [0];
 var vcomponents_10061026 = [{}];
 var kxi_10182284 = [null];
-function new_seq_12416038(len_12416041) {
-  var result_12416043 = null;
+function new_seq_12416051(len_12416054) {
+  var result_12416056 = null;
 
-    result_12416043 = new Array(len_12416041); for (var i=0;i<len_12416041;++i) {result_12416043[i]=null;}
-  return result_12416043;
+    result_12416056 = new Array(len_12416054); for (var i=0;i<len_12416054;++i) {result_12416056[i]=null;}
+  return result_12416056;
 
 }
-var map_12416027 = [{m_type: NTI12137090, sequence: null, city: null, team: null, music: null, height: 0, width: 0}];
-var instruments_12416102 = [new_seq_12416038(0)];
-var selected_12416103 = [null];
+var map_12416040 = [{m_type: NTI12138090, sequence: null, city: null, team: null, music: null, height: 0, width: 0}];
+var instruments_12416115 = [new_seq_12416051(0)];
+var selected_12416116 = [null];
 var selected_type_12567014 = [0];
 function add_142042(x_142045, x_142045_Idx, y_142046) {
           if (x_142045[x_142045_Idx] === null) { x_142045[x_142045_Idx] = []; }
@@ -2504,7 +2504,7 @@ function add_event_handler_10745118(n_10745120, k_10745121, action_10745122, kxi
 
   
 }
-function show_new_map_menu_12567045(ev_12567047, n_12567048) {
+function show_new_map_menu_12567049(ev_12567051, n_12567052) {
     if (document.getElementById("newMap").classList.contains("down")) {
     document.getElementById("newMap").classList.remove("down");
     }
@@ -2683,8 +2683,8 @@ function nsuParseInt(s_9060419) {
   return result_9060420[0];
 
 }
-function init_map_12416141(height_12416143, width_12416145, sequence_12416147, city_12416148, team_12416149, music_12416150) {
-    map_12416027[0] = {height: height_12416143, width: width_12416145, sequence: nimCopy(null, sequence_12416147, NTI112), city: nimCopy(null, city_12416148, NTI112), team: nimCopy(null, team_12416149, NTI112), music: nimCopy(null, music_12416150, NTI112), m_type: NTI12137090};
+function init_map_12416154(height_12416156, width_12416158, sequence_12416160, city_12416161, team_12416162, music_12416163) {
+    map_12416040[0] = {height: height_12416156, width: width_12416158, sequence: nimCopy(null, sequence_12416160, NTI112), city: nimCopy(null, city_12416161, NTI112), team: nimCopy(null, team_12416162, NTI112), music: nimCopy(null, music_12416163, NTI112), m_type: NTI12138090};
 
   
 }
@@ -2726,10 +2726,10 @@ function remove_selection_12555033(e_12555035) {
       var Tmp2;
 
     var map_12555036 = document.getElementById("map");
-      if (!(map_12555036.contains(e_12555035.target))) Tmp2 = true; else {        Tmp2 = (e_12555035.target.id == "map");      }      if (!Tmp2) Tmp1 = false; else {        Tmp1 = !((selected_12416103[0] == null));      }    if (Tmp1) {
+      if (!(map_12555036.contains(e_12555035.target))) Tmp2 = true; else {        Tmp2 = (e_12555035.target.id == "map");      }      if (!Tmp2) Tmp1 = false; else {        Tmp1 = !((selected_12416116[0] == null));      }    if (Tmp1) {
     update_info_instrument_12476093(null);
-    selected_12416103[0].e.classList.remove("selected");
-    selected_12416103[0] = null;
+    selected_12416116[0].e.classList.remove("selected");
+    selected_12416116[0] = null;
     }
     
 
@@ -3665,11 +3665,11 @@ function update_list_12261040(instruments_12261043) {
           L3: while (true) {
           if (!(i_12610315 < l_12610316)) break L3;
             instrument_12290214 = instruments_12261043[chckIndx(i_12610315, 0, (instruments_12261043 != null ? instruments_12261043.length : 0)+0-1)-0];
-            if (contains_12290335(counter_12280629[0], reprEnum(instrument_12290214.instrumentType, NTI12137082))) {
-            (Tmp4 = HEX5BHEX5D_12300794(counter_12280629[0], reprEnum(instrument_12290214.instrumentType, NTI12137082)), Tmp4)[0][Tmp4[1]] = addInt(Tmp4[0][Tmp4[1]], 1);
+            if (contains_12290335(counter_12280629[0], reprEnum(instrument_12290214.instrumentType, NTI12138082))) {
+            (Tmp4 = HEX5BHEX5D_12300794(counter_12280629[0], reprEnum(instrument_12290214.instrumentType, NTI12138082)), Tmp4)[0][Tmp4[1]] = addInt(Tmp4[0][Tmp4[1]], 1);
             }
             else {
-            HEX5BHEX5DHEX3D_12305147(counter_12280629[0], reprEnum(instrument_12290214.instrumentType, NTI12137082), 1);
+            HEX5BHEX5DHEX3D_12305147(counter_12280629[0], reprEnum(instrument_12290214.instrumentType, NTI12138082), 1);
             }
             
             i_12610315 = addInt(i_12610315, 1);
@@ -3730,39 +3730,39 @@ function clear_12515068() {
     L1: do {
       var instrument_12515076 = null;
       var i_12610304 = 0;
-      var l_12610305 = (instruments_12416102[0] != null ? instruments_12416102[0].length : 0);
+      var l_12610305 = (instruments_12416115[0] != null ? instruments_12416115[0].length : 0);
       L2: do {
           L3: while (true) {
           if (!(i_12610304 < l_12610305)) break L3;
-            instrument_12515076 = instruments_12416102[0][chckIndx(i_12610304, 0, (instruments_12416102[0] != null ? instruments_12416102[0].length : 0)+0-1)-0];
+            instrument_12515076 = instruments_12416115[0][chckIndx(i_12610304, 0, (instruments_12416115[0] != null ? instruments_12416115[0].length : 0)+0-1)-0];
             instrument_12515076.e.parentNode.removeChild(instrument_12515076.e);
             i_12610304 = addInt(i_12610304, 1);
-            if (!(((instruments_12416102[0] != null ? instruments_12416102[0].length : 0) == l_12610305))) {
+            if (!(((instruments_12416115[0] != null ? instruments_12416115[0].length : 0) == l_12610305))) {
             failed_assert_impl_102680(makeNimstrLit("iterators.nim(189, 11) `len(a) == L` the length of the seq changed while iterating over it"));
             }
             
           }
       } while(false);
     } while(false);
-    if ((0 < (instruments_12416102[0] != null ? instruments_12416102[0].length : 0))) {
-    delete_12525011(instruments_12416102, 0, 0, chckRange(subInt((instruments_12416102[0] != null ? instruments_12416102[0].length : 0), 1), 0, 2147483647));
+    if ((0 < (instruments_12416115[0] != null ? instruments_12416115[0].length : 0))) {
+    delete_12525011(instruments_12416115, 0, 0, chckRange(subInt((instruments_12416115[0] != null ? instruments_12416115[0].length : 0), 1), 0, 2147483647));
     }
     
     L4: do {
       var iHEX60gensym12535436_12545003 = 0;
-      var resultHEX60gensym12535437_12550011 = new_seq_12145096(chckRange((instruments_12416102[0] != null ? instruments_12416102[0].length : 0), 0, 2147483647));
+      var resultHEX60gensym12535437_12550011 = new_seq_12145096(chckRange((instruments_12416115[0] != null ? instruments_12416115[0].length : 0), 0, 2147483647));
       L5: do {
         var it_12555007 = null;
         var i_12610309 = 0;
-        var l_12610310 = (instruments_12416102[0] != null ? instruments_12416102[0].length : 0);
+        var l_12610310 = (instruments_12416115[0] != null ? instruments_12416115[0].length : 0);
         L6: do {
             L7: while (true) {
             if (!(i_12610309 < l_12610310)) break L7;
-              it_12555007 = instruments_12416102[0][chckIndx(i_12610309, 0, (instruments_12416102[0] != null ? instruments_12416102[0].length : 0)+0-1)-0];
+              it_12555007 = instruments_12416115[0][chckIndx(i_12610309, 0, (instruments_12416115[0] != null ? instruments_12416115[0].length : 0)+0-1)-0];
               resultHEX60gensym12535437_12550011[chckIndx(iHEX60gensym12535436_12545003, 0, (resultHEX60gensym12535437_12550011 != null ? resultHEX60gensym12535437_12550011.length : 0)+0-1)-0] = it_12555007.data;
               iHEX60gensym12535436_12545003 = addInt(iHEX60gensym12535436_12545003, 1);
               i_12610309 = addInt(i_12610309, 1);
-              if (!(((instruments_12416102[0] != null ? instruments_12416102[0].length : 0) == l_12610310))) {
+              if (!(((instruments_12416115[0] != null ? instruments_12416115[0].length : 0) == l_12610310))) {
               failed_assert_impl_102680(makeNimstrLit("iterators.nim(189, 11) `len(a) == L` the length of the seq changed while iterating over it"));
               }
               
@@ -4375,7 +4375,7 @@ function add_11385020(father_11385022, child_11385023) {
 function HEX25_12140139(o_12140142) {
   var result_12140143 = null;
 
-    result_12140143 = HEX25_11495683(reprEnum(o_12140142, NTI12137082));
+    result_12140143 = HEX25_11495683(reprEnum(o_12140142, NTI12138082));
 
   return result_12140143;
 
@@ -4428,32 +4428,32 @@ function HEX25_12140068(elements_12140072) {
   return result_12140073;
 
 }
-function to_json_12137114(map_12137116, instruments_12137118) {
-  var result_12137119 = null;
+function to_json_12138114(map_12138116, instruments_12138118) {
+  var result_12138119 = null;
 
-    result_12137119 = nimCopy(null, HEX24_11700416(HEX25_11495802([nimCopy(null, {Field0: makeNimstrLit("map"), Field1: HEX25_12140003(map_12137116)}, NTI12140002), nimCopy(null, {Field0: makeNimstrLit("instruments"), Field1: HEX25_12140068(instruments_12137118)}, NTI12140002)])), NTI112);
+    result_12138119 = nimCopy(null, HEX24_11700416(HEX25_11495802([nimCopy(null, {Field0: makeNimstrLit("map"), Field1: HEX25_12140003(map_12138116)}, NTI12140002), nimCopy(null, {Field0: makeNimstrLit("instruments"), Field1: HEX25_12140068(instruments_12138118)}, NTI12140002)])), NTI112);
 
-  return result_12137119;
+  return result_12138119;
 
 }
-function data_json_12416164() {
-  var result_12416166 = null;
+function data_json_12416177() {
+  var result_12416179 = null;
 
     L1: do {
-      var iHEX60gensym12416169_12435003 = 0;
-      var resultHEX60gensym12416170_12440011 = new_seq_12145096(chckRange((instruments_12416102[0] != null ? instruments_12416102[0].length : 0), 0, 2147483647));
+      var iHEX60gensym12416182_12435003 = 0;
+      var resultHEX60gensym12416183_12440011 = new_seq_12145096(chckRange((instruments_12416115[0] != null ? instruments_12416115[0].length : 0), 0, 2147483647));
       L2: do {
         var it_12445007 = null;
         var i_12610414 = 0;
-        var l_12610415 = (instruments_12416102[0] != null ? instruments_12416102[0].length : 0);
+        var l_12610415 = (instruments_12416115[0] != null ? instruments_12416115[0].length : 0);
         L3: do {
             L4: while (true) {
             if (!(i_12610414 < l_12610415)) break L4;
-              it_12445007 = instruments_12416102[0][chckIndx(i_12610414, 0, (instruments_12416102[0] != null ? instruments_12416102[0].length : 0)+0-1)-0];
-              resultHEX60gensym12416170_12440011[chckIndx(iHEX60gensym12416169_12435003, 0, (resultHEX60gensym12416170_12440011 != null ? resultHEX60gensym12416170_12440011.length : 0)+0-1)-0] = it_12445007.data;
-              iHEX60gensym12416169_12435003 = addInt(iHEX60gensym12416169_12435003, 1);
+              it_12445007 = instruments_12416115[0][chckIndx(i_12610414, 0, (instruments_12416115[0] != null ? instruments_12416115[0].length : 0)+0-1)-0];
+              resultHEX60gensym12416183_12440011[chckIndx(iHEX60gensym12416182_12435003, 0, (resultHEX60gensym12416183_12440011 != null ? resultHEX60gensym12416183_12440011.length : 0)+0-1)-0] = it_12445007.data;
+              iHEX60gensym12416182_12435003 = addInt(iHEX60gensym12416182_12435003, 1);
               i_12610414 = addInt(i_12610414, 1);
-              if (!(((instruments_12416102[0] != null ? instruments_12416102[0].length : 0) == l_12610415))) {
+              if (!(((instruments_12416115[0] != null ? instruments_12416115[0].length : 0) == l_12610415))) {
               failed_assert_impl_102680(makeNimstrLit("iterators.nim(189, 11) `len(a) == L` the length of the seq changed while iterating over it"));
               }
               
@@ -4461,21 +4461,21 @@ function data_json_12416164() {
         } while(false);
       } while(false);
     } while(false);
-    var data_12445016 = nimCopy(null, resultHEX60gensym12416170_12440011, NTI12145100);
-    result_12416166 = nimCopy(null, to_json_12137114(map_12416027[0], data_12445016), NTI112);
+    var data_12445016 = nimCopy(null, resultHEX60gensym12416183_12440011, NTI12145100);
+    result_12416179 = nimCopy(null, to_json_12138114(map_12416040[0], data_12445016), NTI112);
 
-  return result_12416166;
+  return result_12416179;
 
 }
 function quick_save_12445048() {
-    window.localStorage.setItem("quickSave", toJSStr(data_json_12416164()), "quickSave", toJSStr(data_json_12416164()));
+    window.localStorage.setItem("quickSave", toJSStr(data_json_12416177()), "quickSave", toJSStr(data_json_12416177()));
 
   
 }
 function update_map_element_12560022() {
     var map_12560024 = document.getElementById("map");
-    var height_12560025 = map_12416027[0].height;
-    var width_12560026 = map_12416027[0].width;
+    var height_12560025 = map_12416040[0].height;
+    var width_12560026 = map_12416040[0].width;
     map_12560024.style.height = toJSStr((cstrToNimstr((height_12560025)+"") || []).concat(makeNimstrLit("px") || []));
     map_12560024.style.width = toJSStr((cstrToNimstr((width_12560026)+"") || []).concat(makeNimstrLit("px") || []));
     map_12560024.style.backgroundPosition = toJSStr((cstrToNimstr((HEX2F_325648(height_12560025, 2))+"") || []).concat(makeNimstrLit("px ") || [],cstrToNimstr((HEX2F_325648(width_12560026, 2))+"") || [],makeNimstrLit("px") || []));
@@ -4487,8 +4487,8 @@ function update_map_element_12560022() {
     document.getElementById("rightSideMenu").classList.remove("showLater");
     document.getElementById("addInstrumentMenu").classList.remove("showLater");
     clear_12515068();
-    update_header_12486054(map_12416027[0]);
-    update_info_map_12487080(map_12416027[0]);
+    update_header_12486054(map_12416040[0]);
+    update_info_map_12487080(map_12416040[0]);
     quick_save_12445048();
 
   
@@ -4500,8 +4500,9 @@ function init_map_12560040() {
     var city_12560045 = cstrToNimstr(document.getElementById("cityNew").value);
     var team_12560046 = cstrToNimstr(document.getElementById("teamNew").value);
     var music_12560047 = cstrToNimstr(document.getElementById("musicNew").value);
-    init_map_12416141(height_12560042, width_12560043, sequence_12560044, city_12560045, team_12560046, music_12560047);
+    init_map_12416154(height_12560042, width_12560043, sequence_12560044, city_12560045, team_12560046, music_12560047);
     update_map_element_12560022();
+    ga('send', 'event', 'makeNimstrLit("Map"), makeNimstrLit("New")', 'makeNimstrLit("Map"), makeNimstrLit("New")');
 
   
 }
@@ -4887,7 +4888,7 @@ function parse_enum_12140357(s_12140360) {
           L3: while (true) {
           if (!(res_12610501 <= 5)) break L3;
             e_12140436 = chckRange(res_12610501, 0, 5);
-            if ((nsuCmpIgnoreStyle(s_12140360, reprEnum(e_12140436, NTI12137082)) == 0)) {
+            if ((nsuCmpIgnoreStyle(s_12140360, reprEnum(e_12140436, NTI12138082)) == 0)) {
             result_12140361 = e_12140436;
             break BeforeRet;
             }
@@ -4912,7 +4913,7 @@ function instrument_from_json_12140339(json_12140341) {
     var width_12140351 = get_int_11360020(HEX5BHEX5D_11545497(json_obj_12140343, makeNimstrLit("width")), 0);
     var angle_12140353 = get_int_11360020(HEX5BHEX5D_11545497(json_obj_12140343, makeNimstrLit("angle")), 0);
     var instrument_type_12145058 = parse_enum_12140357(get_str_11355703(HEX5BHEX5D_11545497(json_obj_12140343, makeNimstrLit("instrumentType")), []));
-    result_12140342 = {x: x_12140345, y: y_12140347, height: height_12140349, width: width_12140351, angle: angle_12140353, instrumentType: instrument_type_12145058, m_type: NTI12137086};
+    result_12140342 = {x: x_12140345, y: y_12140347, height: height_12140349, width: width_12140351, angle: angle_12140353, instrumentType: instrument_type_12145058, m_type: NTI12138086};
 
   return result_12140342;
 
@@ -4920,10 +4921,10 @@ function instrument_from_json_12140339(json_12140341) {
 function from_json_12145087(json_12145089) {
         var Tmp3;
 
-  var result_12145090 = ({m_type: NTI12137092, instruments: null, map: null});
+  var result_12145090 = ({m_type: NTI12138092, instruments: null, map: null});
 
     var json_obj_12145091 = parse_json_11850257(json_12145089);
-    var map_12145092 = {m_type: NTI12137090, sequence: null, city: null, team: null, music: null, height: 0, width: 0};
+    var map_12145092 = {m_type: NTI12138090, sequence: null, city: null, team: null, music: null, height: 0, width: 0};
     var instruments_12145130 = new_seq_12145096(0);
     map_12145092.height = get_int_11360020(HEX5BHEX5D_11545497(HEX5BHEX5D_11545497(json_obj_12145091, makeNimstrLit("map")), makeNimstrLit("height")), 0);
     map_12145092.width = get_int_11360020(HEX5BHEX5D_11545497(HEX5BHEX5D_11545497(json_obj_12145091, makeNimstrLit("map")), makeNimstrLit("width")), 0);
@@ -4962,16 +4963,16 @@ function from_json_12145087(json_12145089) {
         } while(false);
       } while(false);
     } while(false);
-    nimCopy(result_12145090, {instruments: nimCopy(null, instruments_12145130, NTI12145100), map: map_12145092, m_type: NTI12137092}, NTI12137092);
+    nimCopy(result_12145090, {instruments: nimCopy(null, instruments_12145130, NTI12145100), map: map_12145092, m_type: NTI12138092}, NTI12138092);
 
   return result_12145090;
 
 }
 function load_json_12445030(json_12445032) {
-  var result_12445033 = ({m_type: NTI12137092, instruments: null, map: null});
+  var result_12445033 = ({m_type: NTI12138092, instruments: null, map: null});
 
     var data_12445034 = from_json_12145087(json_12445032);
-    nimCopy(result_12445033, data_12445034, NTI12137092);
+    nimCopy(result_12445033, data_12445034, NTI12138092);
 
   return result_12445033;
 
@@ -4979,8 +4980,8 @@ function load_json_12445030(json_12445032) {
 function update_instrument_12445063(element_12445065, instrument_12445066) {
     element_12445065.e.style.height = toJSStr((cstrToNimstr((instrument_12445066.height)+"") || []).concat(makeNimstrLit("px") || []));
     element_12445065.e.style.width = toJSStr((cstrToNimstr((instrument_12445066.width)+"") || []).concat(makeNimstrLit("px") || []));
-    element_12445065.e.style.left = toJSStr((cstrToNimstr((addInt(((HEX2F_325648(subInt(map_12416027[0].width, instrument_12445066.width), 2))|0), instrument_12445066.x))+"") || []).concat(makeNimstrLit("px") || []));
-    element_12445065.e.style.top = toJSStr((cstrToNimstr((addInt(((HEX2F_325648(subInt(map_12416027[0].height, instrument_12445066.height), 2))|0), instrument_12445066.y))+"") || []).concat(makeNimstrLit("px") || []));
+    element_12445065.e.style.left = toJSStr((cstrToNimstr((addInt(((HEX2F_325648(subInt(map_12416040[0].width, instrument_12445066.width), 2))|0), instrument_12445066.x))+"") || []).concat(makeNimstrLit("px") || []));
+    element_12445065.e.style.top = toJSStr((cstrToNimstr((addInt(((HEX2F_325648(subInt(map_12416040[0].height, instrument_12445066.height), 2))|0), instrument_12445066.y))+"") || []).concat(makeNimstrLit("px") || []));
     element_12445065.e.style.transform = toJSStr((makeNimstrLit("rotate(") || []).concat(cstrToNimstr((instrument_12445066.angle)+"") || [],makeNimstrLit("deg)") || []));
     quick_save_12445048();
 
@@ -5225,13 +5226,13 @@ function nsuReplaceStr(s_9450016, sub_9450017, by_9450018) {
 function add_instrument_12491014(instrument_12491016) {
     var Tmp1;
     function HEX3Aanonymous_12491028(ev_12491030) {
-        if (!((selected_12416103[0] == null))) {
-        selected_12416103[0].e.classList.remove("selected");
+        if (!((selected_12416116[0] == null))) {
+        selected_12416116[0].e.classList.remove("selected");
         }
         
-        selected_12416103[0] = instrument_element_12491020;
-        selected_12416103[0].e.classList.add("selected");
-        update_info_instrument_12476093(selected_12416103[0].data);
+        selected_12416116[0] = instrument_element_12491020;
+        selected_12416116[0].e.classList.add("selected");
+        update_info_instrument_12476093(selected_12416116[0].data);
 
       
     }
@@ -5240,9 +5241,9 @@ function add_instrument_12491014(instrument_12491016) {
         var width_12495026 = nsuParseInt(nsuReplaceStr(cstrToNimstr((element_12491018.offsetWidth)+""), makeNimstrLit("px"), []));
         var top_12495027 = nsuParseInt(nsuReplaceStr(cstrToNimstr(element_12491018.style.top), makeNimstrLit("px"), []));
         var height_12495028 = nsuParseInt(nsuReplaceStr(cstrToNimstr((element_12491018.offsetHeight)+""), makeNimstrLit("px"), []));
-        instrument_12491016.x = subInt(left_12495025, ((HEX2F_325648(subInt(map_12416027[0].width, width_12495026), 2))|0));
-        instrument_12491016.y = subInt(top_12495027, ((HEX2F_325648(subInt(map_12416027[0].height, height_12495028), 2))|0));
-        update_info_instrument_12476093(selected_12416103[0].data);
+        instrument_12491016.x = subInt(left_12495025, ((HEX2F_325648(subInt(map_12416040[0].width, width_12495026), 2))|0));
+        instrument_12491016.y = subInt(top_12495027, ((HEX2F_325648(subInt(map_12416040[0].height, height_12495028), 2))|0));
+        update_info_instrument_12476093(selected_12416116[0].data);
         quick_save_12445048();
 
       
@@ -5274,27 +5275,27 @@ function add_instrument_12491014(instrument_12491016) {
     element_12491018.innerHTML = toJSStr(svg_12491019);
     element_12491018.style.position = "absolute";
     map_12491017.appendChild(element_12491018);
-    var instrument_element_12491020 = {e: element_12491018, data: instrument_12491016, m_type: NTI12416030};
+    var instrument_element_12491020 = {e: element_12491018, data: instrument_12491016, m_type: NTI12416043};
     update_instrument_12445063(instrument_element_12491020, instrument_12491016);
-    if (instruments_12416102[0] != null) { instruments_12416102[0].push(instrument_element_12491020); } else { instruments_12416102[0] = [instrument_element_12491020]; };
+    if (instruments_12416115[0] != null) { instruments_12416115[0].push(instrument_element_12491020); } else { instruments_12416115[0] = [instrument_element_12491020]; };
     element_12491018.addEventListener("mousedown", HEX3Aanonymous_12491028, false);
     make_dragable_11976028(element_12491018, HEX3Aanonymous_12495022);
     quick_save_12445048();
     L2: do {
       var iHEX60gensym12495044_12505003 = 0;
-      var resultHEX60gensym12495045_12510011 = new_seq_12145096(chckRange((instruments_12416102[0] != null ? instruments_12416102[0].length : 0), 0, 2147483647));
+      var resultHEX60gensym12495045_12510011 = new_seq_12145096(chckRange((instruments_12416115[0] != null ? instruments_12416115[0].length : 0), 0, 2147483647));
       L3: do {
         var it_12515007 = null;
         var i_12610514 = 0;
-        var l_12610515 = (instruments_12416102[0] != null ? instruments_12416102[0].length : 0);
+        var l_12610515 = (instruments_12416115[0] != null ? instruments_12416115[0].length : 0);
         L4: do {
             L5: while (true) {
             if (!(i_12610514 < l_12610515)) break L5;
-              it_12515007 = instruments_12416102[0][chckIndx(i_12610514, 0, (instruments_12416102[0] != null ? instruments_12416102[0].length : 0)+0-1)-0];
+              it_12515007 = instruments_12416115[0][chckIndx(i_12610514, 0, (instruments_12416115[0] != null ? instruments_12416115[0].length : 0)+0-1)-0];
               resultHEX60gensym12495045_12510011[chckIndx(iHEX60gensym12495044_12505003, 0, (resultHEX60gensym12495045_12510011 != null ? resultHEX60gensym12495045_12510011.length : 0)+0-1)-0] = it_12515007.data;
               iHEX60gensym12495044_12505003 = addInt(iHEX60gensym12495044_12505003, 1);
               i_12610514 = addInt(i_12610514, 1);
-              if (!(((instruments_12416102[0] != null ? instruments_12416102[0].length : 0) == l_12610515))) {
+              if (!(((instruments_12416115[0] != null ? instruments_12416115[0].length : 0) == l_12610515))) {
               failed_assert_impl_102680(makeNimstrLit("iterators.nim(189, 11) `len(a) == L` the length of the seq changed while iterating over it"));
               }
               
@@ -5308,7 +5309,7 @@ function add_instrument_12491014(instrument_12491016) {
 }
 function load_map_from_json_12560061(json_12560063) {
     var data_12560064 = load_json_12445030(json_12560063);
-    map_12416027[0] = data_12560064.map;
+    map_12416040[0] = data_12560064.map;
     update_map_element_12560022();
     L1: do {
       var instrument_12560071 = null;
@@ -5342,18 +5343,20 @@ function load_map_12560085() {
     var file_12560088 = (Tmp1 = document.getElementById("load").files, Tmp1)[chckIndx(0, 0, (Tmp1 != null ? Tmp1.length : 0)+0-1)-0];
     reader_12560087.onload = HEX3Aanonymous_12560089;
     reader_12560087.readAsText(file_12560088);
+    ga('send', 'event', 'makeNimstrLit("Map"), makeNimstrLit("Load")', 'makeNimstrLit("Map"), makeNimstrLit("Load")');
 
   
 }
 function save_map_12560179() {
     var link_12560181 = document.createElement("a");
     link_12560181.setAttribute("download", "mapa.taiko");
-    link_12560181.setAttribute("href", toJSStr((makeNimstrLit("data:text/json;charset=utf-8,") || []).concat(data_json_12416164() || [])));
+    link_12560181.setAttribute("href", toJSStr((makeNimstrLit("data:text/json;charset=utf-8,") || []).concat(data_json_12416177() || [])));
     link_12560181.click();
+    ga('send', 'event', 'makeNimstrLit("Map"), makeNimstrLit("Save")', 'makeNimstrLit("Map"), makeNimstrLit("Save")');
 
   
 }
-function select_instrument_type_12567062(ev_12567064, n_12567065) {
+function select_instrument_type_12567066(ev_12567068, n_12567069) {
     L1: do {
       var item_12575214 = null;
       var colontmp__12610545 = null;
@@ -5365,7 +5368,7 @@ function select_instrument_type_12567062(ev_12567064, n_12567065) {
           if (!(i_12610547 < l_12610548)) break L3;
             item_12575214 = colontmp__12610545[chckIndx(i_12610547, 0, (colontmp__12610545 != null ? colontmp__12610545.length : 0)+0-1)-0];
             item_12575214.classList.remove("selected");
-            if ((item_12575214.innerHTML == toJSStr(cstrToNimstr(ev_12567064.target.innerHTML)))) {
+            if ((item_12575214.innerHTML == toJSStr(cstrToNimstr(ev_12567068.target.innerHTML)))) {
             item_12575214.classList.add("selected");
             }
             
@@ -5377,26 +5380,27 @@ function select_instrument_type_12567062(ev_12567064, n_12567065) {
           }
       } while(false);
     } while(false);
-    selected_type_12567014[0] = parse_enum_12140357(cstrToNimstr(ev_12567064.target.innerHTML));
+    selected_type_12567014[0] = parse_enum_12140357(cstrToNimstr(ev_12567068.target.innerHTML));
 
   
 }
-function create_instrument_12416118(x_12416120, y_12416121, height_12416122, width_12416123, angle_12416124, instrument_type_12416125) {
-  var result_12416126 = null;
+function create_instrument_12416131(x_12416133, y_12416134, height_12416135, width_12416136, angle_12416137, instrument_type_12416138) {
+  var result_12416139 = null;
 
-    var instrument_12416127 = {x: x_12416120, y: y_12416121, height: height_12416122, width: width_12416123, angle: angle_12416124, instrumentType: instrument_type_12416125, m_type: NTI12137086};
-    result_12416126 = instrument_12416127;
+    var instrument_12416140 = {x: x_12416133, y: y_12416134, height: height_12416135, width: width_12416136, angle: angle_12416137, instrumentType: instrument_type_12416138, m_type: NTI12138086};
+    result_12416139 = instrument_12416140;
 
-  return result_12416126;
+  return result_12416139;
 
 }
 function add_instrument_12515046(x_12515048, y_12515049, height_12515050, width_12515051, angle_12515052, instrument_type_12515053) {
-    var instrument_12515054 = create_instrument_12416118(x_12515048, y_12515049, height_12515050, width_12515051, angle_12515052, instrument_type_12515053);
+    var instrument_12515054 = create_instrument_12416131(x_12515048, y_12515049, height_12515050, width_12515051, angle_12515052, instrument_type_12515053);
     add_instrument_12491014(instrument_12515054);
 
   
 }
 function add_new_instrument_12567028(ev_12567030, n_12567031) {
+    ga('send', 'event', 'makeNimstrLit("Instrument"), makeNimstrLit("Add"), reprEnum(selected_type_12567014[0], NTI12138082)', 'makeNimstrLit("Instrument"), makeNimstrLit("Add"), reprEnum(selected_type_12567014[0], NTI12138082)', 'makeNimstrLit("Instrument"), makeNimstrLit("Add"), reprEnum(selected_type_12567014[0], NTI12138082)');
     switch (selected_type_12567014[0]) {
     case 0:
       add_instrument_12515046(0, 0, 40, 30, 0, selected_type_12567014[0]);
@@ -5456,7 +5460,7 @@ function render_side_menu_12575256() {
     tmp_12575259.id = "sideMenu";
     var tmp_12575260 = tree_9825445(43, []);
     tmp_12575260.class = "btn";
-    add_event_handler_10745118(tmp_12575260, 0, show_new_map_menu_12567045, kxi_10182284[0]);
+    add_event_handler_10745118(tmp_12575260, 0, show_new_map_menu_12567049, kxi_10182284[0]);
     add_9815072(tmp_12575260, text_9825548(makeNimstrLit("Novo mapa")));
     add_9815072(tmp_12575259, tmp_12575260);
     var tmp_12575261 = tree_9825445(43, []);
@@ -5572,8 +5576,8 @@ function render_side_menu_12575256() {
               v_12610277 = chckRange(res_12610278, 0, 5);
               instrument_12600061 = v_12610277;
               var tmp_12575286 = tree_9825445(43, []);
-              add_event_handler_10745118(tmp_12575286, 0, select_instrument_type_12567062, kxi_10182284[0]);
-              add_9815072(tmp_12575286, text_9825548(reprEnum(instrument_12600061, NTI12137082)));
+              add_event_handler_10745118(tmp_12575286, 0, select_instrument_type_12567066, kxi_10182284[0]);
+              add_9815072(tmp_12575286, text_9825548(reprEnum(instrument_12600061, NTI12138082)));
               add_9815072(tmp_12575285, tmp_12575286);
               res_12610278 = addInt(res_12610278, 1);
             }
@@ -5656,11 +5660,11 @@ function style_9720281(a_9720283, val_9720284) {
 
 }
 function update_header_12486070(sequence_12486072, city_12486073, team_12486074, music_12486075) {
-    map_12416027[0].sequence = nimCopy(null, sequence_12486072, NTI112);
-    map_12416027[0].city = nimCopy(null, city_12486073, NTI112);
-    map_12416027[0].team = nimCopy(null, team_12486074, NTI112);
-    map_12416027[0].music = nimCopy(null, music_12486075, NTI112);
-    update_header_12486054(map_12416027[0]);
+    map_12416040[0].sequence = nimCopy(null, sequence_12486072, NTI112);
+    map_12416040[0].city = nimCopy(null, city_12486073, NTI112);
+    map_12416040[0].team = nimCopy(null, team_12486074, NTI112);
+    map_12416040[0].music = nimCopy(null, music_12486075, NTI112);
+    update_header_12486054(map_12416040[0]);
 
   
 }
@@ -5747,8 +5751,8 @@ function handler_12476117(ev_12476120, n_12476121) {
     var height_12476124 = nsuParseInt(cstrToNimstr(document.getElementById("heightInfo").value));
     var width_12476125 = nsuParseInt(cstrToNimstr(document.getElementById("widthInfo").value));
     var angle_12476126 = nsuParseInt(cstrToNimstr(document.getElementById("angleInfo").value));
-    if (!((selected_12416103[0] == null))) {
-    update_instrument_12445080(selected_12416103[0], x_12476122, y_12476123, height_12476124, width_12476125, angle_12476126);
+    if (!((selected_12416116[0] == null))) {
+    update_instrument_12445080(selected_12416116[0], x_12476122, y_12476123, height_12476124, width_12476125, angle_12476126);
     }
     
 
@@ -5761,18 +5765,18 @@ function delete_12450026(x_12450031, x_12450031_Idx, i_12450032) {
 }
 function delete_selected_12445101() {
     document.getElementById("instrumentInfo").style.display = "none";
-    selected_12416103[0].e.parentNode.removeChild(selected_12416103[0].e);
+    selected_12416116[0].e.parentNode.removeChild(selected_12416116[0].e);
     L1: do {
       var iHEX60gensym12445104_12450014 = 0;
       var colontmp__12610598 = 0;
-      colontmp__12610598 = (instruments_12416102[0] != null ? instruments_12416102[0].length : 0);
+      colontmp__12610598 = (instruments_12416115[0] != null ? instruments_12416115[0].length : 0);
       var res_12610599 = 0;
       L2: do {
           L3: while (true) {
           if (!(res_12610599 <= colontmp__12610598)) break L3;
             iHEX60gensym12445104_12450014 = res_12610599;
-            if ((selected_12416103[0] == instruments_12416102[0][chckIndx(iHEX60gensym12445104_12450014, 0, (instruments_12416102[0] != null ? instruments_12416102[0].length : 0)+0-1)-0])) {
-            delete_12450026(instruments_12416102, 0, chckRange(iHEX60gensym12445104_12450014, 0, 2147483647));
+            if ((selected_12416116[0] == instruments_12416115[0][chckIndx(iHEX60gensym12445104_12450014, 0, (instruments_12416115[0] != null ? instruments_12416115[0].length : 0)+0-1)-0])) {
+            delete_12450026(instruments_12416115, 0, chckRange(iHEX60gensym12445104_12450014, 0, 2147483647));
             break L1;
             }
             
@@ -5780,21 +5784,22 @@ function delete_selected_12445101() {
           }
       } while(false);
     } while(false);
+    ga('send', 'event', 'makeNimstrLit("Instrument"), makeNimstrLit("Add"), reprEnum(selected_12416116[0].data.instrumentType, NTI12138082)', 'makeNimstrLit("Instrument"), makeNimstrLit("Add"), reprEnum(selected_12416116[0].data.instrumentType, NTI12138082)', 'makeNimstrLit("Instrument"), makeNimstrLit("Add"), reprEnum(selected_12416116[0].data.instrumentType, NTI12138082)');
     L4: do {
-      var iHEX60gensym12455417_12465003 = 0;
-      var resultHEX60gensym12455418_12470011 = new_seq_12145096(chckRange((instruments_12416102[0] != null ? instruments_12416102[0].length : 0), 0, 2147483647));
+      var iHEX60gensym12455421_12465003 = 0;
+      var resultHEX60gensym12455422_12470011 = new_seq_12145096(chckRange((instruments_12416115[0] != null ? instruments_12416115[0].length : 0), 0, 2147483647));
       L5: do {
         var it_12475007 = null;
         var i_12610606 = 0;
-        var l_12610607 = (instruments_12416102[0] != null ? instruments_12416102[0].length : 0);
+        var l_12610607 = (instruments_12416115[0] != null ? instruments_12416115[0].length : 0);
         L6: do {
             L7: while (true) {
             if (!(i_12610606 < l_12610607)) break L7;
-              it_12475007 = instruments_12416102[0][chckIndx(i_12610606, 0, (instruments_12416102[0] != null ? instruments_12416102[0].length : 0)+0-1)-0];
-              resultHEX60gensym12455418_12470011[chckIndx(iHEX60gensym12455417_12465003, 0, (resultHEX60gensym12455418_12470011 != null ? resultHEX60gensym12455418_12470011.length : 0)+0-1)-0] = it_12475007.data;
-              iHEX60gensym12455417_12465003 = addInt(iHEX60gensym12455417_12465003, 1);
+              it_12475007 = instruments_12416115[0][chckIndx(i_12610606, 0, (instruments_12416115[0] != null ? instruments_12416115[0].length : 0)+0-1)-0];
+              resultHEX60gensym12455422_12470011[chckIndx(iHEX60gensym12455421_12465003, 0, (resultHEX60gensym12455422_12470011 != null ? resultHEX60gensym12455422_12470011.length : 0)+0-1)-0] = it_12475007.data;
+              iHEX60gensym12455421_12465003 = addInt(iHEX60gensym12455421_12465003, 1);
               i_12610606 = addInt(i_12610606, 1);
-              if (!(((instruments_12416102[0] != null ? instruments_12416102[0].length : 0) == l_12610607))) {
+              if (!(((instruments_12416115[0] != null ? instruments_12416115[0].length : 0) == l_12610607))) {
               failed_assert_impl_102680(makeNimstrLit("iterators.nim(189, 11) `len(a) == L` the length of the seq changed while iterating over it"));
               }
               
@@ -5802,7 +5807,7 @@ function delete_selected_12445101() {
         } while(false);
       } while(false);
     } while(false);
-    update_list_12261040(resultHEX60gensym12455418_12470011);
+    update_list_12261040(resultHEX60gensym12455422_12470011);
     quick_save_12445048();
 
   
@@ -5947,15 +5952,15 @@ function create_dom_12601092() {
 
 }
 function move_selected_12560195(dx_12560197, dy_12560198) {
-    selected_12416103[0].data.x = addInt(selected_12416103[0].data.x, dx_12560197);
-    selected_12416103[0].data.y = addInt(selected_12416103[0].data.y, dy_12560198);
-    update_instrument_12445063(selected_12416103[0], selected_12416103[0].data);
-    update_info_instrument_12476093(selected_12416103[0].data);
+    selected_12416116[0].data.x = addInt(selected_12416116[0].data.x, dx_12560197);
+    selected_12416116[0].data.y = addInt(selected_12416116[0].data.y, dy_12560198);
+    update_instrument_12445063(selected_12416116[0], selected_12416116[0].data);
+    update_info_instrument_12476093(selected_12416116[0].data);
 
   
 }
 function copy_selected_12560224() {
-    window.localStorage.setItem("clipboard", toJSStr(HEX24_11700416(HEX25_12140106(selected_12416103[0].data))), "clipboard", toJSStr(HEX24_11700416(HEX25_12140106(selected_12416103[0].data))));
+    window.localStorage.setItem("clipboard", toJSStr(HEX24_11700416(HEX25_12140106(selected_12416116[0].data))), "clipboard", toJSStr(HEX24_11700416(HEX25_12140106(selected_12416116[0].data))));
 
   
 }
