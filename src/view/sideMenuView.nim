@@ -5,11 +5,13 @@ import strutils
 from ../view/mapView import addInstrument, initMap, loadMap, saveMap
 import ../helper/constants
 import ../model/mapModel
+import ../helper/googleanalytics
 import ../helper/imgExporter
 
 var selectedType : InstrumentType
 
 proc addNewInstrument(ev: Event, n: VNode) =
+    gaSend("Instrument", "Add", $selectedType)
     case selectedType:
         of Okedo:
             addInstrument(0, 0, 40, int(1.5*shaku), 0, selectedType)
