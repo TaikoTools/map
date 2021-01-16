@@ -8,6 +8,7 @@ import ../helper/constants
 import ../helper/storage
 import ../helper/svg
 import ../helper/fileReader
+import ../helper/googleanalytics
 import ../viewModel/mapViewModel
 import ../model/mapModel
 import ./instrumentInfoView
@@ -103,6 +104,7 @@ proc initMap*() =
     let music = $document.getElementById("musicNew").value
     mapViewModel.initMap(height, width, sequence, city, team, music)
     updateMapElement()
+    gaSend("Map", "New")
 
 proc loadMapFromJson*(json: string) = 
     let data = loadJson(json)
@@ -118,12 +120,14 @@ proc loadMap*() =
         loadMapFromJson($reader.result)
     
     reader.readAsText(file)
+    gaSend("Map", "Load")
 
 proc saveMap*() =
     var link = document.createElement("a")
     link.setAttr("download", "mapa.taiko")
     link.setAttr("href", "data:text/json;charset=utf-8," & dataJson())
     link.click()
+    gaSend("Map", "Save")
 
 proc moveSelected*(dx, dy: int) =
     selected.data.x += dx

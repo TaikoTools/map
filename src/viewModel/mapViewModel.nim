@@ -3,6 +3,7 @@ import dom
 import ../helper/seq
 import ../model/mapModel
 import ./instrumentListViewModel
+import ../helper/googleanalytics
 import ../helper/storage
 
 var map*: Map = Map()
@@ -58,5 +59,6 @@ proc deleteSelected*() =
     document.getElementById("instrumentInfo").style.display = "none" # Gambiarra para funcionar
     selected.e.parentNode.removeChild(selected.e)
     instruments.delete(selected)
+    gaSend("Instrument", "Add", $selected.data.instrumentType)
     updateList(instruments.mapIt(it.data))
     quickSave()
