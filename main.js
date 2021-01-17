@@ -4502,7 +4502,7 @@ function init_map_12560040() {
     var music_12560047 = cstrToNimstr(document.getElementById("musicNew").value);
     init_map_12416154(height_12560042, width_12560043, sequence_12560044, city_12560045, team_12560046, music_12560047);
     update_map_element_12560022();
-    try { ga('send', 'event', 'makeNimstrLit("Map"), makeNimstrLit("New")', 'makeNimstrLit("Map"), makeNimstrLit("New")') };
+    try { ga('send', 'event', 'makeNimstrLit("Map"), makeNimstrLit("New")', 'makeNimstrLit("Map"), makeNimstrLit("New")') } catch (e) {};
 
   
 }
@@ -5343,7 +5343,7 @@ function load_map_12560085() {
     var file_12560088 = (Tmp1 = document.getElementById("load").files, Tmp1)[chckIndx(0, 0, (Tmp1 != null ? Tmp1.length : 0)+0-1)-0];
     reader_12560087.onload = HEX3Aanonymous_12560089;
     reader_12560087.readAsText(file_12560088);
-    try { ga('send', 'event', 'makeNimstrLit("Map"), makeNimstrLit("Load")', 'makeNimstrLit("Map"), makeNimstrLit("Load")') };
+    try { ga('send', 'event', 'makeNimstrLit("Map"), makeNimstrLit("Load")', 'makeNimstrLit("Map"), makeNimstrLit("Load")') } catch (e) {};
 
   
 }
@@ -5352,7 +5352,7 @@ function save_map_12560179() {
     link_12560181.setAttribute("download", "mapa.taiko");
     link_12560181.setAttribute("href", toJSStr((makeNimstrLit("data:text/json;charset=utf-8,") || []).concat(data_json_12416177() || [])));
     link_12560181.click();
-    try { ga('send', 'event', 'makeNimstrLit("Map"), makeNimstrLit("Save")', 'makeNimstrLit("Map"), makeNimstrLit("Save")') };
+    try { ga('send', 'event', 'makeNimstrLit("Map"), makeNimstrLit("Save")', 'makeNimstrLit("Map"), makeNimstrLit("Save")') } catch (e) {};
 
   
 }
@@ -5400,7 +5400,7 @@ function add_instrument_12515046(x_12515048, y_12515049, height_12515050, width_
   
 }
 function add_new_instrument_12567028(ev_12567030, n_12567031) {
-    try { ga('send', 'event', 'makeNimstrLit("Instrument"), makeNimstrLit("Add"), reprEnum(selected_type_12567014[0], NTI12138082)', 'makeNimstrLit("Instrument"), makeNimstrLit("Add"), reprEnum(selected_type_12567014[0], NTI12138082)', 'makeNimstrLit("Instrument"), makeNimstrLit("Add"), reprEnum(selected_type_12567014[0], NTI12138082)') };
+    try { ga('send', 'event', 'makeNimstrLit("Instrument"), makeNimstrLit("Add"), reprEnum(selected_type_12567014[0], NTI12138082)', 'makeNimstrLit("Instrument"), makeNimstrLit("Add"), reprEnum(selected_type_12567014[0], NTI12138082)', 'makeNimstrLit("Instrument"), makeNimstrLit("Add"), reprEnum(selected_type_12567014[0], NTI12138082)') } catch (e) {};
     switch (selected_type_12567014[0]) {
     case 0:
       add_instrument_12515046(0, 0, 40, 30, 0, selected_type_12567014[0]);
@@ -5784,7 +5784,7 @@ function delete_selected_12445101() {
           }
       } while(false);
     } while(false);
-    try { ga('send', 'event', 'makeNimstrLit("Instrument"), makeNimstrLit("Add"), reprEnum(selected_12416116[0].data.instrumentType, NTI12138082)', 'makeNimstrLit("Instrument"), makeNimstrLit("Add"), reprEnum(selected_12416116[0].data.instrumentType, NTI12138082)', 'makeNimstrLit("Instrument"), makeNimstrLit("Add"), reprEnum(selected_12416116[0].data.instrumentType, NTI12138082)') };
+    try { ga('send', 'event', 'makeNimstrLit("Instrument"), makeNimstrLit("Add"), reprEnum(selected_12416116[0].data.instrumentType, NTI12138082)', 'makeNimstrLit("Instrument"), makeNimstrLit("Add"), reprEnum(selected_12416116[0].data.instrumentType, NTI12138082)', 'makeNimstrLit("Instrument"), makeNimstrLit("Add"), reprEnum(selected_12416116[0].data.instrumentType, NTI12138082)') } catch (e) {};
     L4: do {
       var iHEX60gensym12455421_12465003 = 0;
       var resultHEX60gensym12455422_12470011 = new_seq_12145096(chckRange((instruments_12416115[0] != null ? instruments_12416115[0].length : 0), 0, 2147483647));
