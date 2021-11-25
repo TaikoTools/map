@@ -13,6 +13,7 @@ proc updateInfoInstrument*(instrument: Instrument) =
     document.getElementById("heightInfo").value = $instrument.height
     document.getElementById("widthInfo").value = $instrument.width
     document.getElementById("angleInfo").value = $instrument.angle
+    document.getElementById("textInfo").value = $instrument.text
     document.getElementById("instrumentInfo").style.display = "block"
 
 proc handler(ev: dom.Event, n: VNode) = 
@@ -21,8 +22,9 @@ proc handler(ev: dom.Event, n: VNode) =
     let height = parseInt($document.getElementById("heightInfo").value)
     let width = parseInt($document.getElementById("widthInfo").value)
     let angle = parseInt($document.getElementById("angleInfo").value)
+    let text = $document.getElementById("textInfo").value
     if selected != nil:
-        selected.updateInstrument(x, y, height, width, angle)
+        selected.updateInstrument(x, y, height, width, angle, text)
 
 proc renderInstrumentInfo*(): VNode =
     buildHtml(tdiv(id = "instrumentInfo", style = style(StyleAttr.display, "none"))):
@@ -46,5 +48,9 @@ proc renderInstrumentInfo*(): VNode =
             label(`for` = "angleInfo", class = "floatLabel"):
                 text("a")
             input(`type` = "number", id = "angleInfo", value = "0", oninput = handler)
+        tdiv():
+            label(`for` = "textInfo", class = "floatLabel"):
+                text("text")
+            input(`type` = "string", id = "textInfo", value = "", oninput = handler)
         tdiv(class = "btn", onclick = deleteSelected):
             text("Delete")

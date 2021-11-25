@@ -13,4 +13,5 @@ proc updateList*(instruments: seq[Instrument]) =
     let list = document.getElementById("instrumentList")
     list.innerHTML = ""
     for instrument, count in counter.pairs:
-        list.innerHTML = $list.innerHTML & fmt"<tr><td>{instrument}</td><td>{count}</td></tr>"
+        if instrument != $Text:
+            list.innerHTML = $list.innerHTML & fmt"<tr><td>{instrument}</td><td>{count}</td></tr>"

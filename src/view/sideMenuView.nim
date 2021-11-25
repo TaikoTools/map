@@ -25,6 +25,8 @@ proc addNewInstrument(ev: Event, n: VNode) =
             addInstrument(0, 0, 15, int(2*shaku), 0, selectedType)
         of Dora:
             addInstrument(0, 0, int(2.5*shaku), int(2.5*shaku), 0, selectedType)
+        of Text:
+            addInstrument(0, 0, 0, 0, 0, selectedType)
 
 proc showNewMapMenu(ev: Event, n: VNode) =
     if document.getElementById("newMap").classList.contains("down"):
