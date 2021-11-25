@@ -32,6 +32,8 @@ proc addInstrument(instrument: Instrument) =
             svgTekkan
         of Dora:
             svgDora
+        of Text:
+            ""
     element.innerHTML = svg
     element.style.position = "absolute"
     map.appendChild(element)
@@ -42,7 +44,8 @@ proc addInstrument(instrument: Instrument) =
         if selected != nil:
             selected.e.classList.remove("selected")
         selected = instrumentElement
-        selected.e.classList.add("selected")
+        if (instrument.instrumentType != Text):
+            selected.e.classList.add("selected")
         updateInfoInstrument(selected.data)
     )
     makeDragable(element, proc (e: Element) =
@@ -82,7 +85,7 @@ proc updateMapElement() =
     let width = mapViewModel.map.width
     map.style.height = $height & "px"
     map.style.width = $width & "px"
-    map.style.backgroundPosition = $(height / 2) & "px " & $(width / 2) & "px"
+    map.style.backgroundPosition = $(width / 2) & "px " & $(height / 2) & "px"
     map.style.display = "block"
     document.getElementById("newMap").classList.remove("down")
     document.getElementById("map").addEventListener("mousedown", removeSelection)
@@ -114,7 +117,7 @@ proc loadMapFromJson*(json: string) =
         addInstrument(instrument)
 
 proc loadMap*() =
-    var reader = FileReader()
+    var reader = fileReader.FileReader()
     var file = InputElement(document.getElementById("load")).files[0]
     reader.onload = proc (e: FLoad) =
         loadMapFromJson($reader.result)

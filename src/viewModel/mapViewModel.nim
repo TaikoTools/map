@@ -21,7 +21,8 @@ proc createInstrument*(x, y, height, width, angle: int, instrumentType: Instrume
             height: height,
             width: width,
             angle: angle,
-            instrumentType: instrumentType
+            instrumentType: instrumentType,
+            text: "Text"
         )
     result = instrument
 
@@ -45,14 +46,17 @@ proc updateInstrument*(element: InstrumentElement, instrument: Instrument) =
     element.e.style.left = $(int((mapViewModel.map.width - instrument.width) / 2) + instrument.x) & "px"
     element.e.style.top = $(int((mapViewModel.map.height - instrument.height) / 2) + instrument.y) & "px"
     element.e.style.transform = "rotate(" & $instrument.angle & "deg)"
+    if (element.data.instrumentType == Text):
+        element.e.innerHTML = instrument.text
     quickSave()
 
-proc updateInstrument*(instrument: InstrumentElement, x, y, height, width, angle: int) =
+proc updateInstrument*(instrument: InstrumentElement, x, y, height, width, angle: int, text: string) =
     instrument.data.x = x
     instrument.data.y = y
     instrument.data.height = height
     instrument.data.width = width
     instrument.data.angle = angle
+    instrument.data.text = text
     instrument.updateInstrument(instrument.data)
 
 proc deleteSelected*() =

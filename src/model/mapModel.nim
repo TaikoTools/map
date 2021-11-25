@@ -1,5 +1,6 @@
 import json
 import strutils
+import sequtils
 
 type
     InstrumentType* = enum 
@@ -8,7 +9,8 @@ type
         Shime,
         Oodaiko,
         Tekkan,
-        Dora
+        Dora,
+        Text
 
     Instrument* = ref InstrumentObj
     InstrumentObj* = object of RootObj
@@ -17,6 +19,7 @@ type
         height*: int
         width*: int
         angle*: int
+        text*: string
         instrumentType*: InstrumentType
 
     Map* = ref MapObj
@@ -33,7 +36,8 @@ type
         map*: Map
 
 func toJson*(map: Map, instruments: seq[Instrument]) : string =
-    result = $ %* {"map": map, "instruments": instruments}
+    let filteredInstruments = instruments.filterIt(it.instrumentType != Text or it.text != "")
+    result = $ %* {"map": map, "instruments": filteredInstruments}
 
 proc instrumentFromJson*(json: string): Instrument =
     let jsonObj = parseJson(json)
@@ -43,6 +47,7 @@ proc instrumentFromJson*(json: string): Instrument =
         height = jsonObj["height"].getInt()
         width = jsonObj["width"].getInt()
         angle = jsonObj["angle"].getInt()
+        text = jsonObj["text"].getStr()
         instrumentType = parseEnum[InstrumentType](jsonObj["instrumentType"].getStr())
     result = Instrument(
         x: x,
@@ -50,8 +55,10 @@ proc instrumentFromJson*(json: string): Instrument =
         height: height,
         width: width,
         angle: angle,
+        text: text,
         instrumentType: instrumentType
     )
+    echo repr result
 
 
 proc fromJson*(json: string): SaveData =
