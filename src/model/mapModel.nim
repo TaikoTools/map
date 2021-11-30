@@ -58,7 +58,6 @@ proc instrumentFromJson*(json: string): Instrument =
         text: text,
         instrumentType: instrumentType
     )
-    echo repr result
 
 
 proc fromJson*(json: string): SaveData =

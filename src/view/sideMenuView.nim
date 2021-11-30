@@ -5,6 +5,7 @@ import strutils
 from ../view/mapView import addInstrument, initMap, loadMap, saveMap
 import ../helper/constants
 import ../model/mapModel
+import ../viewModel/mapViewModel
 import ../helper/googleanalytics
 import ../helper/imgExporter
 
@@ -27,6 +28,10 @@ proc addNewInstrument(ev: Event, n: VNode) =
             addInstrument(0, 0, int(2.5*shaku), int(2.5*shaku), 0, selectedType)
         of Text:
             addInstrument(0, 0, 0, 0, 0, selectedType)
+
+proc exportMap() =
+    let name = if map.music == "": "mapa" else: map.music
+    imgExporter.exportMap(name & ".png")
 
 proc showNewMapMenu(ev: Event, n: VNode) =
     if document.getElementById("newMap").classList.contains("down"):
