@@ -127,7 +127,8 @@ proc loadMap*() =
 
 proc saveMap*() =
     var link = document.createElement("a")
-    link.setAttr("download", "mapa.taiko")
+    let name = if map.music == "": "mapa" else: map.music
+    link.setAttr("download", name & ".taiko")
     link.setAttr("href", "data:text/json;charset=utf-8," & dataJson())
     link.click()
     gaSend("Map", "Save")
