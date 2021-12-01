@@ -127,7 +127,7 @@ proc loadMap*() =
 
 proc saveMap*() =
     var link = document.createElement("a")
-    let name = if map.music == "": "mapa" else: map.music
+    let name = map.mapFileName
     link.setAttr("download", name & ".taiko")
     link.setAttr("href", "data:text/json;charset=utf-8," & dataJson())
     link.click()
