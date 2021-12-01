@@ -30,7 +30,7 @@ proc addNewInstrument(ev: Event, n: VNode) =
             addInstrument(0, 0, 0, 0, 0, selectedType)
 
 proc exportMap() =
-    let name = if map.music == "": "mapa" else: map.music
+    let name = map.mapFileName
     imgExporter.exportMap(name & ".png")
 
 proc showNewMapMenu(ev: Event, n: VNode) =

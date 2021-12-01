@@ -35,6 +35,14 @@ type
         instruments*: seq[Instrument]
         map*: Map
 
+func mapFileName*(map: Map): string =
+    result &= map.sequence
+    if result != "": result &= " - "
+    result &= map.city
+    if result != "": result &= " - "
+    result &= map.music
+    if result == "": result = "mapa"
+
 func toJson*(map: Map, instruments: seq[Instrument]) : string =
     let filteredInstruments = instruments.filterIt(it.instrumentType != Text or it.text != "")
     result = $ %* {"map": map, "instruments": filteredInstruments}
