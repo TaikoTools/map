@@ -53,6 +53,7 @@ label.floatLabel {
     padding: 10px;
     border-radius: 5px;
     background-color: white;
+    margin: auto;
 }
 
 #sideMenu {
@@ -68,8 +69,7 @@ label.floatLabel {
 }
 
 #map {
-    margin: auto;
-    margin-right: 0;
+    margin: 24px;
     background: linear-gradient(
         0deg,
         #000,
